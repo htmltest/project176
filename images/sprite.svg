@@ -1,0 +1,30 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <symbol viewBox="0 0 25.37 25" id="header-search">
+        <path fill-rule="evenodd" stroke="#fff" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M1.347,10.744 C1.347,5.906 5.269,1.983 10.107,1.983 C14.945,1.983 18.867,5.906 18.867,10.744 C18.867,15.583 14.945,19.506 10.107,19.506 C5.269,19.506 1.347,15.583 1.347,10.744 Z" />
+        <path fill-rule="evenodd" fill-opacity="0.2" fill="#fff" d="M4.042,10.744 C4.042,7.395 6.758,4.679 10.107,4.679 C13.456,4.679 16.171,7.395 16.171,10.744 C16.171,14.095 13.456,16.810 10.107,16.810 C6.758,16.810 4.042,14.095 4.042,10.744 Z" />
+        <path fill-rule="evenodd" stroke="#fff" stroke-width="2px" stroke-linecap="square" stroke-linejoin="miter" fill="none" d="M16.171,16.810 L20.888,21.528 "/>
+    </symbol>
+
+    <symbol viewBox="0 0 22 26" id="main-next-arrow">
+        <path fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="miter" fill="none" d="M10.284,2.921 L10.284,20.445 "/>
+        <path fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="miter" fill="none" d="M10.284,21.793 L2.872,14.379 "/>
+        <path fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="miter" fill="none" d="M10.284,21.793 L17.696,14.379 "/>
+    </symbol>
+
+    <symbol viewBox="0 0 25.37 25" id="window-close">
+        <path d="M.63,1.54,2,.13,25.37,23.46,24,24.87Z" />
+        <path d="M25,1.43,23.57,0,0,23.57,1.43,25Z" />
+    </symbol>
+
+    <symbol viewBox="0 0 28 10" id="mobile-menu-link">
+        <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M1.094,0.062 L26.906,0.062 C27.510,0.062 28.000,0.552 28.000,1.156 C28.000,1.760 27.510,2.250 26.906,2.250 L1.094,2.250 C0.490,2.250 -0.000,1.760 -0.000,1.156 C-0.000,0.552 0.490,0.062 1.094,0.062 Z" />
+        <path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M7.094,7.000 L26.906,7.000 C27.510,7.000 28.000,7.490 28.000,8.094 C28.000,8.698 27.510,9.187 26.906,9.187 L7.094,9.187 C6.490,9.187 6.000,8.698 6.000,8.094 C6.000,7.490 6.490,7.000 7.094,7.000 Z" />
+    </symbol>
+
+    <symbol viewBox="0 0 18 17" id="mobile-menu-close">
+        <path fill-rule="evenodd" fill="#000" d="M2.769,0.316 L16.778,14.325 C17.205,14.752 17.205,15.445 16.778,15.872 C16.351,16.299 15.659,16.299 15.231,15.872 L1.222,1.862 C0.795,1.435 0.795,0.743 1.222,0.316 C1.649,-0.112 2.341,-0.112 2.769,0.316 Z" />
+        <path fill-rule="evenodd" fill="#000" d="M15.263,0.316 L1.253,14.325 C0.826,14.752 0.826,15.445 1.253,15.872 C1.680,16.299 2.373,16.299 2.800,15.872 L16.809,1.862 C17.237,1.435 17.237,0.743 16.809,0.316 C16.382,-0.112 15.690,-0.112 15.263,0.316 Z" />
+    </symbol>
+
+</svg>
