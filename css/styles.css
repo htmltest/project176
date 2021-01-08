@@ -107,7 +107,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .mobile-menu-open body {overflow:hidden; position:fixed; left:0; top:0; right:0; bottom:0}
 }
 
-.header-search {float:right; margin:2.6vw -20px 0 0}
+.header-search {display:none; float:right; margin:2.6vw -20px 0 0}
 .header-search-link svg {display:block; width:25px; height:25px}
 
 @media screen and (max-width:1199px) {
@@ -122,9 +122,9 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .header-menu ul li a {color:rgba(255, 255, 255, 0.7); transition:color 0.2s; position:relative}
 .header-menu ul li.active a,
 .header-menu ul li a:hover {color:rgba(217, 174, 252, 0.7); text-decoration:none}
-.header-menu ul li.with-submenu a::after {content:""; display:block; position:absolute; right:-1.45vw; top:3px; width:0.93vw; height:0.52vw; background:url(../images/header-submenu.png) no-repeat; background-size:100% auto}
-.header-menu ul li.with-submenu.active a::after,
-.header-menu ul li.with-submenu a:hover::after {background-position:left -11px}
+.header-menu ul li.with-submenu a::after {content:""; display:block; position:absolute; right:-19px; top:50%; margin-top:-3px; width:13px; height:7px; background:url(../images/header-submenu.png) no-repeat; background-size:100% auto}
+.header-menu ul li.with-submenu:hover a::after,
+.header-menu ul li.with-submenu.active a::after {background-position:left -8px}
 .header-menu ul li.active a::after {transform:rotate(-180deg)}
 .header-menu ul li ul {display:none; position:absolute; left:0; top:100%; margin:26px 0 0 0}
 .header-menu ul li.active ul {display:block}
@@ -328,7 +328,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 }
 
 .main-production-container {position:relative; padding:16.14vw 0 0 0}
-.main-production-bg {position:absolute; left:0; top:0; right:0; height:34.84vw; background:no-repeat center; background-size:cover}
+.main-production-bg {position:absolute; left:3vw; top:0; right:3vw; height:34.84vw; background:no-repeat center; background-size:cover}
 .main-production-bg::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#46425f; opacity:0.35}
 .main-production-wrapper {position:relative; margin:0 -6.77vw}
 .main-production-content {display:table; width:100%; border-collapse:separate; border-spacing:13.54vw 0}
@@ -357,10 +357,10 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .main-production-item-btn a {display:inline-block; height:49px; padding:0 27px; font-size:12px; line-height:49px}
 }
 
-.main-career-container {padding:2.44vw 0 0 0}
+.main-career-container {padding:2.44vw 3vw 0 3vw}
 .main-career-content {background:#555262; color:#fff}
 .main-career-content::after {content:""; display:block; clear:both}
-.main-career-photo {float:left; width:42.44vw; line-height:0; position:relative}
+.main-career-photo {float:left; width:36.44vw; line-height:0; position:relative}
 .main-career-photo img {display:block; width:100%}
 .main-career-photo::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#535070; opacity:0.35}
 .main-career-text {float:right; width:31.25vw; margin:0 9.27vw 0 0; padding:1.92vw 0 2.6vw 0}
