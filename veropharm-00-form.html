@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>Veropharm</title>
+
+        <script src="js/pace/pace.min.js"></script>
+        <link rel="stylesheet" href="js/pace/pace-theme-minimal.css" />
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/slick/slick.css" />
+        <link rel="stylesheet" href="js/revealator/fm.revealator.jquery.min.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="abbott-logo"><img src="images/abbott.svg" alt="" /></div>
+                        <div class="logo"><a href="veropharm-00-main.html"><img src="images/logo.svg" alt="" /></a></div>
+
+                        <a href="#" class="mobile-menu-link"><svg><use xlink:href="images/sprite.svg#mobile-menu-link"></use></svg><svg><use xlink:href="images/sprite.svg#mobile-menu-close"></use></svg></a>
+
+                        <div class="header-search">
+                            <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></a>
+                        </div>
+
+                        <div class="header-menu">
+                            <ul>
+                                <li class="with-submenu">
+                                    <a href="veropharm-01-about.html">О компании</a>
+                                    <ul>
+                                        <li><a href="veropharm-01.1-production.html">Производство</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="veropharm-01.1-production.html">Продукция</a></li>
+                                <li><a href="https://academy.veropharm.ru/">Академия для бизнеса</a></li>
+                                <li><a href="veropharm-00-main.html#main-geo">Контакты</a></li>
+                                <li><a href="veropharm-02-career.html">Карьера</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="header-social">
+                            <ul>
+                                <li><a href="#" target="_blank">Fb</a></li>
+                                <li><a href="#" target="_blank">Vk</a></li>
+                                <li><a href="#" target="_blank">In</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- page inner -->
+                <div class="page-inner">
+                    <div class="page-inner-title">сообщение<br /> о нежелательном явлении</div>
+
+                    <div class="page-form">
+                        <form action="#" method="post">
+                            <div class="page-form-notice">Все поля обязательны для заполнения</div>
+
+                            <div class="form-row">
+                                <div class="form-label">ФИО</div>
+                                <div class="form-field">
+                                    <div class="form-input"><input type="text" name="fio" value="" placeholder="Пример: Иванов Иван Иванович" class="required" /></div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-label">телефон</div>
+                                <div class="form-field">
+                                    <div class="form-input"><input type="text" name="phone" value="" placeholder="+7 (---) --- -- --" class="required phoneRU" /></div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-label">e-mail</div>
+                                <div class="form-field">
+                                    <div class="form-input"><input type="text" name="email" value="" placeholder="xxx@xxx.xx" class="required email" /></div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-label">тип продукции</div>
+                                <div class="form-field">
+                                    <div class="form-select">
+                                        <select name="type" data-placeholder="Введите тип изделия" class="required">
+                                            <option value=""></option>
+                                            <option value="1">Вариант 1</option>
+                                            <option value="2">Вариант 2</option>
+                                            <option value="3">Вариант 3</option>
+                                            <option value="4">Вариант 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-label">Наименование</div>
+                                <div class="form-field">
+                                    <div class="form-select">
+                                        <select name="name" data-placeholder="Выберите полное наименование изделия" class="required">
+                                            <option value=""></option>
+                                            <option value="1">Вариант 1</option>
+                                            <option value="2">Вариант 2</option>
+                                            <option value="3">Вариант 3</option>
+                                            <option value="4">Вариант 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-label">серия изделия</div>
+                                <div class="form-field">
+                                    <div class="form-input"><input type="text" name="series" value="" placeholder="Введите серию изделия" class="required" /></div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-label">Сообщение</div>
+                                <div class="form-field">
+                                    <div class="form-input"><textarea name="message" rows="5" cols="10" placeholder="Опишите событие" class="required"></textarea></div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-radio-policy">
+                                    <label>
+                                        <input type="radio" name="policy" value="confirm" checked="checked" />
+                                        <span>Я согласен</span>
+                                    </label>
+                                    <div class="form-radio-policy-text">Настоящим, делая отметку в поле «Я согласен», я  даю свое согласие компании ООО «Эбботт» на обработку моих персональных данных, в&nbsp;том числе передачу третьим лицам.</div>
+                                </div>
+                            </div>
+
+                            <div class="form-captcha">
+                                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                                <div class="g-recaptcha" data-sitekey="6Ldk5DMUAAAAALWRTOM96EQI_0OApr59RQHoMirA"></div>
+                            </div>
+
+                            <div class="form-ctrl">
+                                <div class="form-submit"><input type="submit" value="Отправить" /></div>
+                                <div class="form-reset"><input type="reset" value="Очистить" /></div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <!-- page inner END -->
+
+            </div>
+        </div>
+        <!-- wrapper END -->
+
+        <footer>
+
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo"><img src="images/footer-logo.svg" alt="" /></div>
+                    <div class="footer-copyrights">© Veropharm 2007—2020. Все права защищены.</div>
+                    <div class="footer-copyrights-text">Нелицензионное использование материалов сайта запрещено. Компания «Верофарм» является частью глобального подразделения лекарственных препаратов компании Abbott VERPVH170175 от 17.02.2017</div>
+                </div>
+
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Продукция</a></li>
+                        <li><a href="#">Академия для бизнеса</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Безопасность и охрана труда</a></li>
+                        <li><a href="#">Раскрытие информации</a></li>
+                        <li><a href="#">Научные мероприятия</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Политика персональных данных</a></li>
+                        <li><a href="#">Условия онлайн-использования</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+
+        <script src="js/revealator/fm.revealator.jquery.min.js"></script>
+
+    </body>
+</html>

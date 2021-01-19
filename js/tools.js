@@ -129,6 +129,17 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $.validator.addMethod('phoneRU',
+        function(phone_number, element) {
+            return this.optional(element) || phone_number.match(/^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
+        },
+        'Ошибка заполнения'
+    );
+
+    $('form').each(function() {
+        initForm($(this));
+    });
+
 });
 
 function windowOpen(linkWindow, dataWindow) {
@@ -217,3 +228,32 @@ Pace.on('done', function() {
 
     $(window).trigger('scroll');
 });
+
+function initForm(curForm) {
+    curForm.find('input.phoneRU').mask('+7 (000) 000-00-00');
+
+    $('.form-reset input').click(function() {
+        window.setTimeout(function() {
+            curForm.find('.form-select select').each(function() {
+                var curSelect = $(this);
+                curSelect.trigger({type: 'select2:select'});
+            });
+        }, 100);
+    });
+
+    curForm.find('.form-select select').each(function() {
+        var curSelect = $(this);
+        var options = {
+            minimumResultsForSearch: 99
+        }
+
+        curSelect.select2(options);
+        if (curSelect.find('option:selected').legnth > 0 || curSelect.find('option').legnth == 1 || curSelect.find('option:first').html() != '') {
+            curSelect.trigger({type: 'select2:select'})
+        }
+    });
+
+    curForm.validate({
+        ignore: ''
+    });
+}
