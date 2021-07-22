@@ -141,9 +141,12 @@
                                 </div>
                             </div>
 
+                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                             <div class="form-captcha">
-                                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                                <div class="g-recaptcha" data-sitekey="6Ldk5DMUAAAAALWRTOM96EQI_0OApr59RQHoMirA"></div>
+                                <div class="form-captcha-inner">
+                                    <div class="g-recaptcha"></div>
+                                    <input type="hidden" class="required" name="hiddenRecaptcha" value="" />
+                                </div>
                             </div>
 
                             <div class="form-ctrl">

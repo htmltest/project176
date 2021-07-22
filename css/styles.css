@@ -433,18 +433,27 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .main-contacts-education::after {display:none}
 }
 
-.main-map {height:862px; margin:0 0 -58px 0}
+.main-map {margin:0 0 -58px 0; position:relative}
+.main-map-img {display:block; position:relative; width:100%}
+.main-map-points {position:absolute; left:0; top:0; right:0; bottom:0}
+.main-map-point {position:absolute}
+.main-map-point-icon {position:absolute; left:-14.5px; top:-33px; width:29px; height:38px; cursor:pointer}
+.main-map-point.open .main-map-point-icon {display:none}
+.main-map-point-icon-1 {background:url(../images/map-icon-1.png) no-repeat}
+.main-map-point-icon-2 {background:url(../images/map-icon-2.png) no-repeat}
+.main-map-point-window {display:none; position:absolute; left:0; bottom:19px; transform:translateX(-50%); z-index:999; width:459px; background:#4d495b; box-shadow:0 4px 10px rgba(0, 0, 0, 0.1); border-radius:4px; padding:9px 20px 36px 20px}
+.main-map-point.open .main-map-point-window {display:block}
+.main-map-point-window::before {content:""; display:block; width:0; height:0; border-top:19px solid #4d495b; border-left:13px solid transparent; border-right:13px solid transparent; position:absolute; left:50%; bottom:-19px; margin-left:-13px}
+.main-map-point-window-close {display:block; position:absolute; right:0; top:0; width:33px; height:33px; background:url(../images/popover-close.png) no-repeat center}
 
 @media screen and (max-width:1199px) {
-    .main-map {height:544px; margin:0 0 -65px 0}
-}
-
-.popover {position:relative; z-index:999; width:459px; background:#4d495b; box-shadow:0 4px 10px rgba(0, 0, 0, 0.1); border-radius:4px; padding:9px 20px 36px 20px}
-.popover::before {content:""; display:block; width:0; height:0; border-top:19px solid #4d495b; border-left:13px solid transparent; border-right:13px solid transparent; position:absolute; left:50%; bottom:-19px; margin-left:-13px}
-.popover .close {display:block; position:absolute; right:0; top:0; width:33px; height:33px; background:url(../images/popover-close.png) no-repeat center}
-
-@media screen and (max-width:1199px) {
-    .popover {width:308px; padding:6px 12px 20px 12px}
+    .main-map {margin:0 0 -65px 0; height:610px}
+    .main-map-inner {display:inline-block; vertical-align:top; min-width:100%; position:relative; left:50%; transform:translateX(-50%)}
+    .main-map-point-open .main-map-inner {left:auto; transform:none}
+    .main-map-img {width:auto; height:545px; max-width:none}
+    .main-map-point-window {position:fixed; width:auto; padding:0; left:0; top:0; right:0; bottom:0; transform:none; box-shadow:none; border-radius:0; background:rgba(0, 0, 0, 0.99); text-align:center; overflow:auto}
+    .main-map-point-window::before {content:""; display:inline-block; width:auto; height:auto; border:none; left:auto; bottom:auto; position:relative; margin:0; height:100%; vertical-align:middle}
+    .main-map-point-window-inner {width:308px; padding:6px 12px 20px 12px; position:relative; display:inline-block; vertical-align:middle; background:#4d495b; box-shadow:0 4px 10px rgba(0, 0, 0, 0.1); border-radius:4px; text-align:left}
 }
 
 .main-map-window-title {font-weight:bold; font-size:20px; line-height:29px; color:#fff}
@@ -773,8 +782,10 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 .form-input textarea:-ms-input-placeholder {opacity:1; color:#383738}
 .form-input textarea {height:auto; resize:none; overflow:auto}
 .form-input input.error,
-.form-input textarea.error {background-color:#fbcfcf; border-color:#786262}
-label.error {display:block; font-size:12px; line-height:18px; color:#383738; margin:5px 0 0 0; text-align:right}
+.form-input textarea.error {border-color:#ffa7a7}
+.form-input input.valid,
+.form-input textarea.valid {border-color:#87e38b}
+label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; margin:5px 0 0 0; text-align:right}
 
 @media screen and (max-width:1199px) {
     .form-input input,
@@ -826,3 +837,5 @@ label.error {display:block; font-size:12px; line-height:18px; color:#383738; mar
 @media screen and (max-width:1199px) {
     .form-ctrl input {padding:0 25px; font-size:12px; height:48px; line-height:48px}
 }
+
+.form-captcha-inner {display:inline-block; vertical-align:top; position:relative}

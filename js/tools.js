@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+    $('.slider-list').each(function() {
+        var curList = $(this);
+        var curCount = curList.find('.slider-item').length;
+        curList.find('.slider-main-ctrl-count').html(curCount);
+        curList.find('.slider-item').each(function() {
+            var curItem = $(this);
+            curItem.find('.slider-main-ctrl-current').html(curItem.index() + 1);
+        });
+    });
+
     $('.slider-list').slick({
         infinite: true,
         slidesToShow: 1,
@@ -257,3 +267,77 @@ function initForm(curForm) {
         ignore: ''
     });
 }
+
+$(window).on('load resize', function() {
+
+    $('.main-map').each(function() {
+        var startWidth = Number($('.main-map-img').attr('data-width'));
+        var curWidth = $('.main-map-inner').width();
+        var curDiff = curWidth / startWidth;
+        $('.main-map-point').each(function() {
+            var curPoint = $(this);
+            curPoint.css({'left': curDiff * Number(curPoint.attr('data-left')) + 'px', 'top': curDiff * Number(curPoint.attr('data-top')) + 'px'});
+        });
+    });
+
+});
+
+$(document).ready(function() {
+
+    $('.main-map-point-icon').click(function() {
+        if ($(window).width() < 1200) {
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('main-map-point-open');
+            $('.wrapper').css({'top': -curScroll});
+            $('.wrapper').data('curScroll', curScroll);
+        }
+        $('.main-map-point.open').removeClass('open');
+        $(this).parent().addClass('open');
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.main-map-point').length == 0 && $('.main-map-point.open').length > 0) {
+            $('.main-map-point.open').removeClass('open');
+            if ($(window).width() < 1200) {
+                $('html').removeClass('main-map-point-open');
+                $('.wrapper').css({'top': 0});
+                $(window).scrollTop($('.wrapper').data('curScroll'));
+            }
+        }
+    });
+
+    $('.main-map-point-window-close').click(function(e) {
+        $('.main-map-point.open').removeClass('open');
+        if ($(window).width() < 1200) {
+            $('html').removeClass('main-map-point-open');
+            $('.wrapper').css({'top': 0});
+            $(window).scrollTop($('.wrapper').data('curScroll'));
+        }
+        e.preventDefault();
+    });
+
+});
+
+var captchaKey = '6Ldk5DMUAAAAALWRTOM96EQI_0OApr59RQHoMirA';
+var captchaArray = [];
+
+var onloadCallback = function() {
+    $('.g-recaptcha').each(function() {
+        var newCaptcha = grecaptcha.render(this, {
+            'sitekey' : captchaKey,
+            'callback' : verifyCallback,
+        });
+        captchaArray.push([newCaptcha, $(this)]);
+    });
+};
+
+var verifyCallback = function(response) {
+    for (var i = 0; i < captchaArray.length; i++) {
+        if (grecaptcha.getResponse(captchaArray[i][0])) {
+            var curInput = captchaArray[i][1].next();
+            curInput.val(response);
+            curInput.removeClass('error');
+            curInput.parent().find('label.error').remove();
+        }
+    }
+};
