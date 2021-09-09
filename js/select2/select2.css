@@ -222,11 +222,7 @@
   border-radius: 0px; }
     select.error+.select2-container .select2-selection--single,
     select.error+label.error+.select2-container .select2-selection--single {
-        border-color:#ffa7a7
-    }
-    select.valid+.select2-container .select2-selection--single,
-    select.valid+label.error+.select2-container .select2-selection--single {
-        border-color:#87e38b
+        background-color:#fbcfcf; border-color:#786262
     }
   .select2-container--default .select2-selection--single .select2-selection__rendered {
     color: #000;
