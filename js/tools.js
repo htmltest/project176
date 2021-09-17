@@ -42,7 +42,16 @@ $(document).ready(function() {
         var curPlayer = $(this).parents().filter('.about-video-player');
         $('.about-video-player-content').html('');
         $('.about-video-player.start').removeClass('start');
-        curPlayer.find('.about-video-player-content').html('<iframe width="560" height="315" src="' + $(this).attr('href') + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+        var playerID = 'player_' + Date.now();
+        curPlayer.find('.about-video-player-content').html('<div id="' + playerID + '"></div>');
+        LimelightPlayerUtil.embed({
+            'height': '321',
+            'width': '540',
+            'mediaId': $(this).attr('data-id'),
+            'playerId': playerID,
+            'playerForm': 'LVPPlayer',
+            'autoplay': true
+        });
         curPlayer.addClass('start');
         e.preventDefault();
     });
@@ -114,7 +123,7 @@ $(document).ready(function() {
         }
     });
 
-    $('body').on('click', '.window-close', function(e) {
+    $('body').on('click', '.window-close, .window-close-btn', function(e) {
         windowClose();
         e.preventDefault();
     });
@@ -146,8 +155,138 @@ $(document).ready(function() {
         'Ошибка заполнения'
     );
 
+    $.validator.addMethod('inputDate',
+        function(curDate, element) {
+            if (this.optional(element) && curDate == '') {
+                return true;
+            } else {
+                if (curDate.match(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/)) {
+                    return true;
+                } else {
+                    $.validator.messages['inputDate'] = 'Дата введена некорректно';
+                    return false;
+                }
+            }
+        },
+        ''
+    );
+
     $('form').each(function() {
         initForm($(this));
+    });
+
+    $('body').on('click', '.external-link', function(e) {
+        windowOpenHTML( '<div class="window-external">' +
+                            '<div class="window-external-title">Вы переходите<br /> с веб-сайта компании «Верофарм» на сторонний веб-сайт</div>' +
+                            '<div class="window-external-text">Ссылки, с помощью которых вы можете перейти с веб-сайтов компании «Верофарм», не контролируются компанией «Верофарм», и компания «Верофарм» не несет ответственности за содержание таких веб-сайтов и любые другие ссылки на таких сайтах. Компания «Верофарм» предоставляет вам эти ссылки исключительно для удобства, и включение таких ссылок не подразумевает авторизацию компанией Верофарм связанного сайта.</div>' +
+                            '<div class="window-external-confirm">Вы хотите продолжить и покинуть этот веб-сайт?</div>' +
+                            '<div class="window-external-btns">' +
+                                '<a href="' + $(this).attr('href') + '">Да</a>' +
+                                '<a href="#" class="window-close-btn">Нет</a>' +
+                            '</div>' +
+                        '</div>');
+        e.preventDefault();
+    });
+
+    $('.form-add-link a').click(function(e) {
+        var curID = Date.now();
+        var newHTMLTEXT = $('.page-form-add-block').html();
+        newHTMLTEXT = newHTMLTEXT.replace(/_ID_/g, curID);
+        $('<div class="form-add-other">' + newHTMLTEXT + '</div>').insertBefore('.form-add-link');
+        var curForm = $('.form-add-other:last');
+
+        curForm.find('.form-input-date input').mask('00.00.0000');
+        curForm.find('.form-input-date input').attr('autocomplete', 'off');
+        curForm.find('.form-input-date input').addClass('inputDate');
+
+        curForm.find('.form-input-date input').on('keyup', function() {
+            var curValue = $(this).val();
+            if (curValue.match(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/)) {
+                var isCorrectDate = true;
+                var userDate = new Date(curValue.substr(6, 4), Number(curValue.substr(3, 2)) - 1, Number(curValue.substr(0, 2)));
+                if ($(this).attr('min')) {
+                    var minDateStr = $(this).attr('min');
+                    var minDate = new Date(minDateStr.substr(6, 4), Number(minDateStr.substr(3, 2)) - 1, Number(minDateStr.substr(0, 2)));
+                    if (userDate < minDate) {
+                        isCorrectDate = false;
+                    }
+                }
+                if ($(this).attr('max')) {
+                    var maxDateStr = $(this).attr('max');
+                    var maxDate = new Date(maxDateStr.substr(6, 4), Number(maxDateStr.substr(3, 2)) - 1, Number(maxDateStr.substr(0, 2)));
+                    if (userDate > maxDate) {
+                        isCorrectDate = false;
+                    }
+                }
+                if (isCorrectDate) {
+                    var myDatepicker = $(this).data('datepicker');
+                    if (myDatepicker) {
+                        var curValueArray = curValue.split('.');
+                        myDatepicker.selectDate(new Date(Number(curValueArray[2]), Number(curValueArray[1]) - 1, Number(curValueArray[0])));
+                        myDatepicker.show();
+                        $(this).focus();
+                    }
+                } else {
+                    $(this).addClass('error');
+                    return false;
+                }
+            }
+        });
+
+        curForm.find('.form-input-date input').each(function() {
+            var minDateText = $(this).attr('min');
+            var minDate = null;
+            if (typeof (minDateText) != 'undefined') {
+                var minDateArray = minDateText.split('.');
+                minDate = new Date(Number(minDateArray[2]), Number(minDateArray[1]) - 1, Number(minDateArray[0]));
+            }
+            var maxDateText = $(this).attr('max');
+            var maxDate = null;
+            if (typeof (maxDateText) != 'undefined') {
+                var maxDateArray = maxDateText.split('.');
+                maxDate = new Date(Number(maxDateArray[2]), Number(maxDateArray[1]) - 1, Number(maxDateArray[0]));
+            }
+            if ($(this).hasClass('maxDate1Year')) {
+                var curDate = new Date();
+                curDate.setFullYear(curDate.getFullYear() + 1);
+                curDate.setDate(curDate.getDate() - 1);
+                maxDate = curDate;
+                var maxDay = curDate.getDate();
+                if (maxDay < 10) {
+                    maxDay = '0' + maxDay
+                }
+                var maxMonth = curDate.getMonth() + 1;
+                if (maxMonth < 10) {
+                    maxMonth = '0' + maxMonth
+                }
+                $(this).attr('max', maxDay + '.' + maxMonth + '.' + curDate.getFullYear());
+            }
+            var startDate = new Date();
+            if (typeof ($(this).attr('value')) != 'undefined') {
+                var curValue = $(this).val();
+                if (curValue != '') {
+                    var startDateArray = curValue.split('.');
+                    startDate = new Date(Number(startDateArray[2]), Number(startDateArray[1]) - 1 , Number(startDateArray[0]));
+                }
+            }
+            $(this).datepicker({
+                language: 'ru',
+                minDate: minDate,
+                maxDate: maxDate,
+                startDate: startDate,
+                toggleSelected: false
+            });
+            if (typeof ($(this).attr('value')) != 'undefined') {
+                var curValue = $(this).val();
+                if (curValue != '') {
+                    var startDateArray = curValue.split('.');
+                    startDate = new Date(Number(startDateArray[2]), Number(startDateArray[1]) - 1 , Number(startDateArray[0]));
+                    $(this).data('datepicker').selectDate(startDate);
+                }
+            }
+        });
+
+        e.preventDefault();
     });
 
 });
@@ -197,6 +336,40 @@ function windowOpen(linkWindow, dataWindow) {
     });
 }
 
+function windowOpenHTML(html) {
+    if ($('.window').length == 0) {
+        var curPadding = $('.wrapper').width();
+        var curWidth = $(window).width();
+        if (curWidth < 320) {
+            curWidth = 320;
+        }
+        var curScroll = $(window).scrollTop();
+        $('html').addClass('window-open');
+        curPadding = $('.wrapper').width() - curPadding;
+        $('body').css({'margin-right': curPadding + 'px'});
+
+        $('body').append('<div class="window"><div class="window-loading"></div></div>')
+
+        $('.wrapper').css({'top': -curScroll});
+        $('.wrapper').data('curScroll', curScroll);
+        $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+    } else {
+        $('.window').append('<div class="window-loading"></div>')
+        $('.window-container').addClass('window-container-preload');
+    }
+
+    if ($('.window-container').length == 0) {
+        $('.window').html('<div class="window-container window-container-preload">' + html + '<a href="#" class="window-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-close"></use></svg></a></div>');
+    } else {
+        $('.window-container').html(html + '<a href="#" class="window-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-close"></use></svg></a>');
+        $('.window .window-loading').remove();
+    }
+
+    window.setTimeout(function() {
+        $('.window-container-preload').removeClass('window-container-preload');
+    }, 100);
+}
+
 function windowClose() {
     if ($('.window').length > 0) {
         $('.window').remove();
@@ -233,10 +406,13 @@ $(window).on('load resize scroll', function() {
 });
 
 Pace.on('done', function() {
-    $('.revealator-within').removeClass('revealator-within');
-    $('.wrapper').addClass('preloadsuccess');
+    if (!$('.wrapper').hasClass('preloadsuccess')) {
+        $('.revealator-within').removeClass('revealator-within');
+        $('.wrapper').addClass('preloadsuccess');
+        $('body').addClass('preloadsuccess_one');
 
-    $(window).trigger('scroll');
+        $(window).trigger('scroll');
+    }
 });
 
 function initForm(curForm) {
@@ -249,6 +425,97 @@ function initForm(curForm) {
                 curSelect.trigger({type: 'select2:select'});
             });
         }, 100);
+    });
+
+    curForm.find('.form-input-date input').mask('00.00.0000');
+    curForm.find('.form-input-date input').attr('autocomplete', 'off');
+    curForm.find('.form-input-date input').addClass('inputDate');
+
+    curForm.find('.form-input-date input').on('keyup', function() {
+        var curValue = $(this).val();
+        if (curValue.match(/^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/)) {
+            var isCorrectDate = true;
+            var userDate = new Date(curValue.substr(6, 4), Number(curValue.substr(3, 2)) - 1, Number(curValue.substr(0, 2)));
+            if ($(this).attr('min')) {
+                var minDateStr = $(this).attr('min');
+                var minDate = new Date(minDateStr.substr(6, 4), Number(minDateStr.substr(3, 2)) - 1, Number(minDateStr.substr(0, 2)));
+                if (userDate < minDate) {
+                    isCorrectDate = false;
+                }
+            }
+            if ($(this).attr('max')) {
+                var maxDateStr = $(this).attr('max');
+                var maxDate = new Date(maxDateStr.substr(6, 4), Number(maxDateStr.substr(3, 2)) - 1, Number(maxDateStr.substr(0, 2)));
+                if (userDate > maxDate) {
+                    isCorrectDate = false;
+                }
+            }
+            if (isCorrectDate) {
+                var myDatepicker = $(this).data('datepicker');
+                if (myDatepicker) {
+                    var curValueArray = curValue.split('.');
+                    myDatepicker.selectDate(new Date(Number(curValueArray[2]), Number(curValueArray[1]) - 1, Number(curValueArray[0])));
+                    myDatepicker.show();
+                    $(this).focus();
+                }
+            } else {
+                $(this).addClass('error');
+                return false;
+            }
+        }
+    });
+
+    curForm.find('.form-input-date input').each(function() {
+        var minDateText = $(this).attr('min');
+        var minDate = null;
+        if (typeof (minDateText) != 'undefined') {
+            var minDateArray = minDateText.split('.');
+            minDate = new Date(Number(minDateArray[2]), Number(minDateArray[1]) - 1, Number(minDateArray[0]));
+        }
+        var maxDateText = $(this).attr('max');
+        var maxDate = null;
+        if (typeof (maxDateText) != 'undefined') {
+            var maxDateArray = maxDateText.split('.');
+            maxDate = new Date(Number(maxDateArray[2]), Number(maxDateArray[1]) - 1, Number(maxDateArray[0]));
+        }
+        if ($(this).hasClass('maxDate1Year')) {
+            var curDate = new Date();
+            curDate.setFullYear(curDate.getFullYear() + 1);
+            curDate.setDate(curDate.getDate() - 1);
+            maxDate = curDate;
+            var maxDay = curDate.getDate();
+            if (maxDay < 10) {
+                maxDay = '0' + maxDay
+            }
+            var maxMonth = curDate.getMonth() + 1;
+            if (maxMonth < 10) {
+                maxMonth = '0' + maxMonth
+            }
+            $(this).attr('max', maxDay + '.' + maxMonth + '.' + curDate.getFullYear());
+        }
+        var startDate = new Date();
+        if (typeof ($(this).attr('value')) != 'undefined') {
+            var curValue = $(this).val();
+            if (curValue != '') {
+                var startDateArray = curValue.split('.');
+                startDate = new Date(Number(startDateArray[2]), Number(startDateArray[1]) - 1 , Number(startDateArray[0]));
+            }
+        }
+        $(this).datepicker({
+            language: 'ru',
+            minDate: minDate,
+            maxDate: maxDate,
+            startDate: startDate,
+            toggleSelected: false
+        });
+        if (typeof ($(this).attr('value')) != 'undefined') {
+            var curValue = $(this).val();
+            if (curValue != '') {
+                var startDateArray = curValue.split('.');
+                startDate = new Date(Number(startDateArray[2]), Number(startDateArray[1]) - 1 , Number(startDateArray[0]));
+                $(this).data('datepicker').selectDate(startDate);
+            }
+        }
     });
 
     curForm.find('.form-select select').each(function() {
