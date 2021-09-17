@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/revealator/fm.revealator.jquery.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
-        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -71,7 +70,7 @@
                                     <div class="slider-main-title">Расширяя выбор разумных решений</div>
                                     <div class="slider-main-ctrl">
                                         <a href="#" class="slider-main-ctrl-prev"></a>
-                                        <span class="slider-main-ctrl-current">1</span>/<span class="slider-main-ctrl-count">3</span>
+                                        <span class="slider-main-ctrl-current"></span>/<span class="slider-main-ctrl-count"></span>
                                         <a href="#" class="slider-main-ctrl-next"></a>
                                     </div>
                                 </div>
@@ -86,7 +85,7 @@
                                     <div class="slider-main-title">Расширяя выбор разумных решений</div>
                                     <div class="slider-main-ctrl">
                                         <a href="#" class="slider-main-ctrl-prev"></a>
-                                        <span class="slider-main-ctrl-current">2</span>/<span class="slider-main-ctrl-count">3</span>
+                                        <span class="slider-main-ctrl-current"></span>/<span class="slider-main-ctrl-count"></span>
                                         <a href="#" class="slider-main-ctrl-next"></a>
                                     </div>
                                 </div>
@@ -101,7 +100,7 @@
                                     <div class="slider-main-title">Расширяя выбор разумных решений</div>
                                     <div class="slider-main-ctrl">
                                         <a href="#" class="slider-main-ctrl-prev"></a>
-                                        <span class="slider-main-ctrl-current">3</span>/<span class="slider-main-ctrl-count">3</span>
+                                        <span class="slider-main-ctrl-current"></span>/<span class="slider-main-ctrl-count"></span>
                                         <a href="#" class="slider-main-ctrl-next"></a>
                                     </div>
                                 </div>
@@ -286,151 +285,65 @@
                         </div>
                     </div>
 
-                    <div class="main-map" id="map"></div>
-                    <script>
-                        var mainMapData = [
-                            {
-                                'coords'    : [51.659937, 39.184656],
-                                'type'      : 1,
-                                'html'      : '<div class="main-map-window-title">Завод «ВЕРОФАРМ» в Воронеже</div><div class="main-map-window-address">394006, г. Воронеж, ул. Кольцовская, 80</div><div class="main-map-window-phones">(473) 272-72- 95, (473) 272-70- 95</div><div class="main-map-window-email">infovrn@veropharm.ru</div>'
-                            },
-                            {
-                                'coords'    : [55.948876, 39.237684],
-                                'type'      : 1,
-                                'html'      : '<div class="main-map-window-title">Завод «Верофарм» в п. Вольгинский Владимирской области</div><div class="main-map-window-address">601125, Владимирская обл., Петушинский район, пос. Вольгинский, корпус 67</div><div class="main-map-window-phones">(492) 437-17-53, (492) 437-14-55</div><div class="main-map-window-email">pokrov@veropharm.ru</div>'
-                            },
-                            {
-                                'coords'    : [50.566707, 36.657273],
-                                'type'      : 1,
-                                'html'      : '<div class="main-map-window-title">Завод «Верофарм» в Белгороде</div><div class="main-map-window-address">308013, г. Белгород, ул. Рабочая, 14</div><div class="main-map-window-phones">(4722) 21-17-42, (4722) 21-36-96</div>'
-                            },
-                            {
-                                'coords'    : [56.998491, 40.984443],
-                                'type'      : 2,
-                                'html'      : '<div class="main-map-window-title">Ивановский Государственный химико-технологический университет</div>'
-                            },
-                            {
-                                'coords'    : [59.971008, 30.310299],
-                                'type'      : 2,
-                                'html'      : '<div class="main-map-window-title">Санкт-Петербугская государственная Химико-фармацевтическая Академия</div>'
-                            },
-                            {
-                                'coords'    : [50.621383, 36.578757],
-                                'type'      : 2,
-                                'html'      : '<div class="main-map-window-title">Белгородский государственный национальный исследовательский университет</div>'
-                            },
-                            {
-                                'coords'    : [56.146249, 40.379467],
-                                'type'      : 2,
-                                'html'      : '<div class="main-map-window-title">Владимирский государственный университет им. А.Г. и Н.Г. Столетовых</div>'
-                            }
-                        ];
-                    </script>
+                    <!-- main map -->
+                    <div class="main-map">
+                        <div class="main-map-inner">
+                            <img src="images/map.png" alt="" class="main-map-img" data-width="1920" />
+                            <div class="main-map-points">
+                                <div class="main-map-point" data-left="1098" data-top="695">
+                                    <div class="main-map-point-icon main-map-point-icon-1"></div>
+                                    <div class="main-map-point-window">
+                                        <div class="main-map-point-window-inner">
+                                            <div class="main-map-window-title">Завод «ВЕРОФАРМ» в Воронеже</div>
+                                            <div class="main-map-window-address">394006, г. Воронеж, ул. Кольцовская, 80</div>
+                                            <div class="main-map-window-phones">(473) 272-72-95, (473) 272-70-95</div>
+                                            <div class="main-map-window-email">infovrn@veropharm.ru</div>
+                                            <a class="main-map-point-window-close" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <script src="https://api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+                                <div class="main-map-point" data-left="1208" data-top="162">
+                                    <div class="main-map-point-icon main-map-point-icon-1"></div>
+                                    <div class="main-map-point-window">
+                                        <div class="main-map-point-window-inner">
+                                            <div class="main-map-window-title">Завод «Верофарм» в п. Вольгинский Владимирской области</div>
+                                            <div class="main-map-window-address">601125, Владимирская обл., Петушинский район, пос. Вольгинский, корпус 67</div>
+                                            <div class="main-map-window-phones">(492) 437-17-53, (492) 437-14-55</div>
+                                            <div class="main-map-window-email">pokrov@veropharm.ru</div>
+                                            <a class="main-map-point-window-close" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
 
-                    <script>
-                        ymaps.ready(init);
+                                <div class="main-map-point" data-left="913" data-top="817">
+                                    <div class="main-map-point-icon main-map-point-icon-1"></div>
+                                    <div class="main-map-point-window">
+                                        <div class="main-map-point-window-inner">
+                                            <div class="main-map-window-title">Завод «Верофарм» в Белгороде</div>
+                                            <div class="main-map-window-address">308013, г. Белгород, ул. Рабочая, 14</div>
+                                            <div class="main-map-window-phones">(4722) 21-17-42, (4722) 21-36-96</div>
+                                            <a class="main-map-point-window-close" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        var myMap;
-
-                        function init() {
-                            myMap = new ymaps.Map('map', {
-                                center: [55.755768, 37.617671],
-                                zoom: 6,
-                                controls: []
-                            });
-
-                            myMap.behaviors.disable('scrollZoom');
-
-                            var MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
-                                '<div class="popover">' +
-                                    '<a class="close" href="#"></a>' +
-                                    '$[[options.contentLayout]]' +
-                                '</div>', {
-                                    build: function() {
-                                        this.constructor.superclass.build.call(this);
-                                        this._$element = $('.popover', this.getParentElement());
-                                        this.applyElementOffset();
-                                        this._$element.find('.close')
-                                            .on('click', $.proxy(this.onCloseClick, this));
-                                    },
-
-                                    clear: function() {
-                                        this._$element.find('.close')
-                                            .off('click');
-                                        this.constructor.superclass.clear.call(this);
-                                    },
-
-                                    onSublayoutSizeChange: function() {
-                                        MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
-                                        if (!this._isElement(this._$element)) {
-                                            return;
-                                        }
-                                        this.applyElementOffset();
-                                        this.events.fire('shapechange');
-                                    },
-
-                                    applyElementOffset: function() {
-                                        this._$element.css({
-                                            left: -(this._$element[0].offsetWidth / 2),
-                                            top: -(this._$element[0].offsetHeight + 34)
-                                    });
-                                },
-
-                                onCloseClick: function(e) {
-                                    e.preventDefault();
-                                    this.events.fire('userclose');
-                                },
-
-                                getShape: function () {
-                                    if (!this._isElement(this._$element)) {
-                                        return MyBalloonLayout.superclass.getShape.call(this);
-                                    }
-
-                                    var position = this._$element.position();
-
-                                    return new ymaps.shape.Rectangle(new ymaps.geometry.pixel.Rectangle([
-                                        [position.left, position.top], [
-                                            position.left + this._$element[0].offsetWidth,
-                                            position.top + this._$element[0].offsetHeight
-                                        ]
-                                    ]));
-                                },
-
-                                _isElement: function(element) {
-                                    return element && element[0];
-                                }
-                            });
-
-                            var MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
-                                '$[properties.balloonContent]'
-                            );
-
-                            var placemarkList = [];
-
-                            for (var i = 0; i < mainMapData.length; i++) {
-                                var curItem = mainMapData[i];
-                                var myPlacemark = new ymaps.Placemark(curItem.coords, {
-                                    hintContent: curItem.title,
-                                    balloonID: i,
-                                    balloonContent: curItem.html
-                                }, {
-                                    balloonShadow: false,
-                                    balloonLayout: MyBalloonLayout,
-                                    balloonContentLayout: MyBalloonContentLayout,
-                                    hideIconOnBalloonOpen: false,
-                                    balloonPanelMaxMapArea: 0,
-                                    iconLayout: 'default#image',
-                                    iconImageHref: 'images/map-icon-' + curItem.type + '.png',
-                                    iconImageSize: [29, 38],
-                                    iconImageOffset: [-14, -33]
-                                });
-                                placemarkList.push(myPlacemark);
-                                myMap.geoObjects.add(myPlacemark);
-                            }
-                        }
-                    </script>
+                                <div class="main-map-point" data-left="985" data-top="206">
+                                    <div class="main-map-point-icon main-map-point-icon-2"></div>
+                                    <div class="main-map-point-window">
+                                        <div class="main-map-point-window-inner">
+                                            <div class="main-map-window-title">Центральный офис в Москве</div>
+                                            <div class="main-map-window-address">115088, г. Москва, 2-й Южнопортовый проезд, дом 18, строение 9</div>
+                                            <div class="main-map-window-phones">+7 495 792-53-30</div>
+                                            <div class="main-map-window-email">info@veropharm.ru</div>
+                                            <a class="main-map-point-window-close" href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main map END -->
                 </div>
                 <!-- main geo END -->
 
@@ -492,7 +405,6 @@
         <script src="js/validation/messages_ru.js"></script>
         <script src="js/select2/select2.min.js"></script>
         <script src="js/select2/ru.js"></script>
-        <script src="js/air-datepicker/datepicker.min.js"></script>
         <script src="js/tools.js"></script>
 
         <script src="js/revealator/fm.revealator.jquery.min.js"></script>

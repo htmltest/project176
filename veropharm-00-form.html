@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/revealator/fm.revealator.jquery.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css" />
-        <link rel="stylesheet" href="js/air-datepicker/datepicker.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -65,207 +64,34 @@
 
                     <div class="page-form">
                         <form action="#" method="post">
-                            <div class="page-form-notice">Поля, отмеченные *, обязательны для заполнения</div>
-
-                            <div class="page-form-subtitle">Информация о пациенте</div>
+                            <div class="page-form-notice">Все поля обязательны для заполнения</div>
 
                             <div class="form-row">
-                                <div class="form-label">ФИО*</div>
+                                <div class="form-label">ФИО</div>
                                 <div class="form-field">
                                     <div class="form-input"><input type="text" name="fio" value="" placeholder="Пример: Иванов Иван Иванович" class="required" /></div>
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-label">Пол</div>
-                                <div class="form-field">
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="gender" value="M" checked="checked" />
-                                            <span>Мужской</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="gender" value="F" />
-                                            <span>Женский</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Возраст</div>
-                                <div class="form-field form-field-short">
-                                    <div class="form-input"><input type="text" name="age" value="" placeholder="Укажите возраст" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Вес, кг</div>
-                                <div class="form-field form-field-short">
-                                    <div class="form-input"><input type="text" name="weight" value="" placeholder="Укажите вес" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Беременность</div>
-                                <div class="form-field">
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="pregnancy" value="Y" />
-                                            <span>Да</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="pregnancy" value="N" checked="checked" />
-                                            <span>Нет</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Срок беременности, недель</div>
-                                <div class="form-field form-field-short">
-                                    <div class="form-input"><input type="text" name="duration_pregnancy" value="" placeholder="Кол-во недель" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Нарушение функции печени</div>
-                                <div class="form-field">
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="liver" value="Y" />
-                                            <span>Да</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="liver" value="N" />
-                                            <span>Нет</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="liver" value="U" checked="checked" />
-                                            <span>Неизвестно</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Нарушение функции почек</div>
-                                <div class="form-field">
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="kidneys" value="Y" />
-                                            <span>Да</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="kidneys" value="N" />
-                                            <span>Нет</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="kidneys" value="U" checked="checked" />
-                                            <span>Неизвестно</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Аллергия</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="allergy" value="" placeholder="Указать на что" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Лечение</div>
-                                <div class="form-field">
-                                    <div class="form-select">
-                                        <select name="treatment">
-                                            <option value="1">Амбулаторное</option>
-                                            <option value="2">Стационарное</option>
-                                            <option value="3">Самолечение</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="page-form-subtitle">Информация о заполняющем форму</div>
-
-                            <div class="form-row">
-                                <div class="form-label">ФИО*</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="author_fio" value="" placeholder="Пример: Иванов Иван Иванович" class="required" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Должность и место работы</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="post" value="" placeholder="Пример: врач-терапевт, Городская больница г. Московский" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Телефон*</div>
+                                <div class="form-label">телефон</div>
                                 <div class="form-field">
                                     <div class="form-input"><input type="text" name="phone" value="" placeholder="+7 (---) --- -- --" class="required phoneRU" /></div>
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-label">E-mail</div>
+                                <div class="form-label">e-mail</div>
                                 <div class="form-field">
                                     <div class="form-input"><input type="text" name="email" value="" placeholder="xxx@xxx.xx" class="required email" /></div>
                                 </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-label">Дата получения информации</div>
-                                <div class="form-field form-field-short">
-                                    <div class="form-input form-input-date"><input type="text" name="info_date" value="" /></div>
-                                </div>
-                            </div>
-
-                            <div class="page-form-subtitle">Информация о ЛЕКАРСТВЕННОМ ПРЕПАРАТЕ, предположительно вызвавшем нежелательное явление</div>
-
-                            <div class="form-row">
-                                <div class="form-label">Торговое название*</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="trade_name" value="" placeholder="Пример: амигренин" class="required" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Международное непатентованное название (МНН)</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="international_name" value="" placeholder="Пример: суматриптан" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Производитель</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="manufacturer" value="" placeholder="Укажите производителя" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Страна</div>
+                                <div class="form-label">тип продукции</div>
                                 <div class="form-field">
                                     <div class="form-select">
-                                        <select name="country" data-placeholder="Укажите страну">
+                                        <select name="type" data-placeholder="Введите тип изделия" class="required">
                                             <option value=""></option>
                                             <option value="1">Вариант 1</option>
                                             <option value="2">Вариант 2</option>
@@ -277,265 +103,26 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="form-label">Номер серии</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="series" value="" placeholder="Укажите номер серии" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Показания к&nbsp;назначению препарата*</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="indications" value="" placeholder="Пример: мигрень" class="required" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Путь введения</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="way" value="" placeholder="Укажите путь введения" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Суточная доза</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="dose" value="" placeholder="Укажите суточную дозу" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row-dates">
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата начала терапии</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="date_start" value="" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата окончания терапии</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="date_stop" value="" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="page-form-subtitle">Описание НЕЖЕЛАТЕЛЬНОГО ЯВЛЕНИЯ, предположительно связанного с приемом лекарственного препарата</div>
-
-                            <div class="form-row">
-                                <div class="form-label">Опишите нежелательное явление*</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="symptoms" value="" placeholder="Укажите симптомы" class="required" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row-dates">
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата начала нежелательного явления</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="date_symptoms_start" value="" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата окончания нежелательного явления</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="date_symptoms_stop" value="" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row form-row-reverse">
-                                <div class="form-label">Сопровождалась ли отмена лекарственного препарата исчезновением нежелательного явления?*</div>
+                                <div class="form-label">Наименование</div>
                                 <div class="form-field">
                                     <div class="form-select">
-                                        <select name="cancel" class="required">
-                                            <option value="1">Да</option>
-                                            <option value="2">Нет</option>
-                                            <option value="3">ЛП не отменялся</option>
-                                            <option value="4">Неприменимо</option>
+                                        <select name="name" data-placeholder="Выберите полное наименование изделия" class="required">
+                                            <option value=""></option>
+                                            <option value="1">Вариант 1</option>
+                                            <option value="2">Вариант 2</option>
+                                            <option value="3">Вариант 3</option>
+                                            <option value="4">Вариант 4</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="form-row form-row-reverse">
-                                <div class="form-label">Отмечено ли повторение нежелательной реакции после повторного назначения лекарственного препарата?*</div>
-                                <div class="form-field">
-                                    <div class="form-select">
-                                        <select name="again" class="required">
-                                            <option value="1">Да</option>
-                                            <option value="2">Нет</option>
-                                            <option value="3">ЛП повторно не назначался</option>
-                                            <option value="4">Неприменимо</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row form-field-radios-row">
-                                <div class="form-label">Предпринятые меры</div>
-                                <div class="form-field">
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="measures" value="1" checked="checked" />
-                                            <span>Без лечения</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="measures" value="2" />
-                                            <span>Отмена подозреваемого лекарственного препарата</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="measures" value="3" />
-                                            <span>Снижение дозы подозреваемого лекарственного препарата</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="measures" value="4" />
-                                            <span>Отмена сопутствующего лечения</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="measures" value="5" />
-                                            <span>Лекарственная терапия</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="measures" value="6" />
-                                            <span>Немедикаментозная терапия (в т.ч. хирургическое вмешательство)</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="measures" value="7" />
-                                            <span>Другое, указать</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="form-row">
-                                <div class="form-label">Лекарств. терапия нежелательного явления (если понадобилась)</div>
+                                <div class="form-label">серия изделия</div>
                                 <div class="form-field">
-                                    <div class="form-input"><input type="text" name="therapy" value="" placeholder="Укажите лекарственную терапию нежелательного явления" /></div>
+                                    <div class="form-input"><input type="text" name="series" value="" placeholder="Введите серию изделия" class="required" /></div>
                                 </div>
                             </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Исход*</div>
-                                <div class="form-field">
-                                    <div class="form-select">
-                                        <select name="result" class="required">
-                                            <option value="1">Выздоровление без последствий</option>
-                                            <option value="2">Улучшение состояния</option>
-                                            <option value="3">Состояние без изменений</option>
-                                            <option value="4">Смерть</option>
-                                            <option value="5">Неизвестно</option>
-                                            <option value="6">Неприменимо</option>
-                                            <option value="7">Выздоровление с последствиями, указать</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="page-form-subtitle">ДРУГИЕ ЛЕКАРСТВЕННЫЕ СРЕДСТВА, принимаемые в течение последних 3 месяцев, включая лекарственные средства и БАД, принимаемые пациентом самостоятельно (по собственному решению)</div>
-
-                            <div class="form-row">
-                                <div class="form-label">Укажите "Нет", если других лекарств пациент не принимал</div>
-                                <div class="form-field">
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="other" value="Y" checked="checked" />
-                                            <span>Да</span>
-                                        </label>
-                                    </div>
-                                    <div class="form-radio">
-                                        <label>
-                                            <input type="radio" name="other" value="N" />
-                                            <span>Нет</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">МНН</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[0][international_name]" value="" placeholder="Пример: суматриптан" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Торговое название</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[0][trade_name]" value="" placeholder="Пример: амигренин" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Путь введения</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[0][way]" value="" placeholder="Укажите путь введения" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row-dates">
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата начала терапии</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="other[0][date_start]" value="" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата окончания терапии</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="other[0][date_stop]" value="" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Показание</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[0][indications]" value="" placeholder="Пример: мигрень" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-add-link"><a href="#">Добавить лекарственное средство</a></div>
-
-                            <div class="form-row">
-                                <div class="form-label">Анамнез / сопутствующие заболевания</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="anamnesis" value="" placeholder="Укажите заболевания" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Вредные привычки</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="bad" value="" placeholder="Укажите вредные привычки" /></div>
-                                </div>
-                            </div>
-
-                            <div class="page-form-subtitle">Значимая дополнительная информация</div>
-                            <div class="page-form-descr">Предоставьте, пожалуйста, любую дополнительную информацию о нежелательном явлении, лекарственной терапии, взаимодействии лекарственных препаратов, данные клинических, лабораторных, рентгенологических исследований и аутопсии, включая определение концентрации ЛС в крови/тканях, если таковые имеются и связаны с нежелательным явлением (пожалуйста, приведите даты)</div>
 
                             <div class="form-row">
                                 <div class="form-label">Сообщение</div>
@@ -554,9 +141,12 @@
                                 </div>
                             </div>
 
+                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                             <div class="form-captcha">
-                                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                                <div class="g-recaptcha" data-sitekey="6Ldk5DMUAAAAALWRTOM96EQI_0OApr59RQHoMirA"></div>
+                                <div class="form-captcha-inner">
+                                    <div class="g-recaptcha"></div>
+                                    <input type="hidden" class="required" name="hiddenRecaptcha" value="" />
+                                </div>
                             </div>
 
                             <div class="form-ctrl">
@@ -565,55 +155,6 @@
                             </div>
 
                         </form>
-
-                        <div class="page-form-add-block">
-                            <div class="form-row">
-                                <div class="form-label">МНН</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[_ID_][international_name]" value="" placeholder="Пример: суматриптан" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Торговое название</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[_ID_][trade_name]" value="" placeholder="Пример: амигренин" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Путь введения</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[_ID_][way]" value="" placeholder="Укажите путь введения" /></div>
-                                </div>
-                            </div>
-
-                            <div class="form-row-dates">
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата начала терапии</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="other[_ID_][date_start]" value="" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата окончания терапии</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="other[_ID_][date_stop]" value="" /></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-label">Показание</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[_ID_][indications]" value="" placeholder="Пример: мигрень" /></div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- page inner END -->
@@ -661,13 +202,12 @@
 
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/slick/slick.min.js"></script>
+        <script src="js/tools.js"></script>
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/validation/messages_ru.js"></script>
         <script src="js/select2/select2.min.js"></script>
         <script src="js/select2/ru.js"></script>
-        <script src="js/air-datepicker/datepicker.min.js"></script>
-        <script src="js/tools.js"></script>
 
         <script src="js/revealator/fm.revealator.jquery.min.js"></script>
 
