@@ -289,6 +289,20 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.links-filter').each(function() {
+        updateFilterLinks();
+    });
+
+    $('.links-filter-item a').click(function(e) {
+        var curItem = $(this).parent();
+        if (!curItem.hasClass('active')) {
+            $('.links-filter-item.active').removeClass('active');
+            curItem.addClass('active');
+            updateFilterLinks();
+        }
+        e.preventDefault();
+    });
+
 });
 
 function windowOpen(linkWindow, dataWindow) {
@@ -608,3 +622,16 @@ var verifyCallback = function(response) {
         }
     }
 };
+
+function updateFilterLinks() {
+    var curYear = $('.links-filter-item.active a').attr('data-year');
+    $('.links-item').addClass('hidden');
+    $('.links-item[data-year="' + curYear + '"]').removeClass('hidden');
+    if ($('.links-item:not(.hidden)').length == 0) {
+        $('.links-list').addClass('hidden');
+        $('.links-empty').addClass('visible');
+    } else {
+        $('.links-list').removeClass('hidden');
+        $('.links-empty').removeClass('visible');
+    }
+}
