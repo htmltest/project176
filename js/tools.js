@@ -290,6 +290,26 @@ $(document).ready(function() {
     });
 
     $('.links-filter').each(function() {
+        var years = [];
+        $('.links-item').each(function() {
+            var curYear = Number($(this).attr('data-year'));
+            if (years.indexOf(curYear) == -1) {
+                years.push(curYear);
+            }
+        });
+
+        years.sort(function(a, b) {
+          if (a < b) return 1;
+          if (a == b) return 0;
+          if (a > b) return -1;
+        });
+
+        for (var i = 0; i < years.length; i++) {
+            $('.links-filter').append('<div class="links-filter-item"><a href="#" data-year="' + years[i] + '">' + years[i] + '</a></div>');
+        }
+        
+        $('.links-filter-item').eq(0).addClass('active');
+
         updateFilterLinks();
     });
 
