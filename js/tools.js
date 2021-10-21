@@ -307,7 +307,7 @@ $(document).ready(function() {
         for (var i = 0; i < years.length; i++) {
             $('.links-filter').append('<div class="links-filter-item"><a href="#" data-year="' + years[i] + '">' + years[i] + '</a></div>');
         }
-        
+
         $('.links-filter-item').eq(0).addClass('active');
 
         updateFilterLinks();
@@ -321,6 +321,20 @@ $(document).ready(function() {
             updateFilterLinks();
         }
         e.preventDefault();
+    });
+
+    $('a').click(function(e) {
+        var curBlock = $(this.hash);
+        if (curBlock.length > 0) {
+            if ($('html').hasClass('mobile-menu-open')) {
+                $('html').removeClass('mobile-menu-open');
+                $('meta[name="viewport"]').attr('content', 'width=device-width');
+                $('.wrapper').css('margin-top', 0);
+                $(window).scrollTop($('html').data('scrollTop'));
+            }
+            $('html, body').animate({'scrollTop': curBlock.offset().top});
+            e.preventDefault();
+        }
     });
 
 });

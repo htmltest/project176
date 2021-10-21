@@ -238,7 +238,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 
 @media screen and (max-width:1199px) {
     .slider-about-container {right:0; width:271px; padding:30px 15px 40px 30px}
-    .slider-about-title {font-size:22px; line-heigth:30px; margin:0 0 0 -52px}
+    .slider-about-title {font-size:22px; line-height:30px; margin:0 0 0 -52px}
     .slider-about-text {font-size:10px; line-height:15px; margin:12px 0 0 0}
 }
 
@@ -251,7 +251,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 
 @media screen and (max-width:1199px) {
     .slider-career-container {right:0; left:auto; width:271px; padding:30px 15px 40px 30px}
-    .slider-career-title {font-size:22px; line-heigth:30px; margin:0 0 0 -52px}
+    .slider-career-title {font-size:22px; line-height:30px; margin:0 0 0 -52px}
     .slider-career-text {font-size:10px; line-height:15px; margin:12px 0 0 0}
 }
 
@@ -266,7 +266,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 
 @media screen and (max-width:1199px) {
     .slider-production-container {right:0; left:auto; width:271px; padding:30px 15px 40px 30px}
-    .slider-production-title {font-size:22px; line-heigth:30px; margin:0 0 0 -52px}
+    .slider-production-title {font-size:22px; line-height:30px; margin:0 0 0 -52px}
     .slider-production-text {font-size:10px; line-height:15px; margin:12px 0 0 0}
 }
 
@@ -457,7 +457,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .main-map-point-window-close {display:block; position:absolute; right:0; top:0; width:33px; height:33px; background:url(../images/popover-close.png) no-repeat center}
 
 @media screen and (max-width:1199px) {
-    .main-map {margin:0 0 -65px 0; height:610px}
+    .main-map {margin:0}
     .main-map-inner {display:inline-block; vertical-align:top; min-width:100%; position:relative; left:50%; transform:translateX(-50%)}
     .main-map-point-open .main-map-inner {left:auto; transform:none}
     .main-map-img {width:auto; height:545px; max-width:none}
