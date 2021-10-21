@@ -648,25 +648,26 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
     .footer-copyrights-text {max-width:none; font-size:12px; line-height:20px}
 }
 
-.footer-menu {float:right; font-size:14px; line-height:20px; margin:41px 17.91vw 0 0}
-.footer-menu ul {float:left; margin:0 0 0 5.62vw}
+.footer-menu {float:right; font-size:14px; line-height:20px; margin:41px 3.48vw 0 0}
+.footer-menu ul {float:left; margin:0 0 0 4.16vw}
 .footer-menu ul:first-child {margin:0}
 .footer-menu ul li {margin:4px 0 0 0; padding:0}
 .footer-menu ul li::before {display:none}
 .footer-menu ul li a {color:#848484; text-decoration:underline}
 .footer-menu ul li a:hover {text-decoration:none}
 
-@media screen and (max-width:1600px) {
-    .footer-menu {margin-right:12vw}
+@media screen and (max-width:1500px) {
+    .footer-menu {margin-right:-2vw}
 }
 
-@media screen and (max-width:1400px) {
-    .footer-menu {margin-right:0}
+@media screen and (max-width:1350px) {
+    .footer-menu ul {margin:0 0 0 2vw; max-width:300px}
+    .footer-menu ul:first-child {margin:0}
 }
 
 @media screen and (max-width:1199px) {
     .footer-menu {float:none; font-size:12px; line-height:20px; margin:22px 0 0 0}
-    .footer-menu ul {float:none; margin:0}
+    .footer-menu ul {float:none; margin:0; max-width:none}
     .footer-menu ul li {margin:8px 0 0 0}
 }
 
