@@ -12,7 +12,7 @@ body {min-width:320px; height:100%; margin:0; padding:0; font:300 0.99vw/1.45em 
 .fonts-loaded body {font-family:GothamPro, sans-serif}
 
 @media screen and (max-width:1199px) {
-    body {height:auto; font-size:12px; line-height:18px}
+    body {height:auto; font-size:18px; line-height:27px}
 }
 
 a {color:#403357; text-decoration:none}
@@ -43,17 +43,17 @@ li ol {margin:0; counter-reset:subpoint}
 ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:subpoint 1}
 
 @media screen and (max-width:1199px) {
-    h1 {margin:36px 0 18px 0}
-    h2 {margin:36px 0 18px 0}
-    h3 {margin:36px 0 18px 0}
-    h4 {margin:36px 0 18px 0}
-    p {margin:18px 0}
-    ul {margin:18px 0}
-    p+ul {margin-top:-8px}
+    h1 {margin:54px 0 27px 0}
+    h2 {margin:54px 0 27px 0}
+    h3 {margin:54px 0 27px 0}
+    h4 {margin:54px 0 27px 0}
+    p {margin:27px 0}
+    ul {margin:27px 0}
+    p+ul {margin-top:-27px}
     ul li {padding:0 0 0 28px; margin:10px 0 0 0}
-    ul li::before {width:7px; height:7px; top:6px}
-    ol {margin:18px 0}
-    p+ol {margin-top:-8px}
+    ul li::before {width:7px; height:7px; top:11px}
+    ol {margin:27px 0}
+    p+ol {margin-top:-27px}
     ol li {padding:0 0 0 28px; margin:10px 0 0 0}
 }
 
@@ -154,7 +154,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 
 @media screen and (max-width:1199px) {
     .header-menu {display:none}
-    .mobile-menu-open .header-menu {display:block; position:relative; text-align:center; float:left; width:100%; font-size:16px; line-height:19px; margin:101px 0 0 0; min-height:calc(100vh - 170px)}
+    .mobile-menu-open .header-menu {display:block; position:relative; text-align:center; float:left; width:100%; font-size:18px; line-height:27px; margin:101px 0 0 0; min-height:calc(100vh - 170px)}
     .header-menu ul li {float:none; margin:30px 0 0 0}
     .header-menu ul li.with-submenu a::after {display:none}
     .header-menu ul li ul {display:block; position:relative; left:auto; top:auto; margin:30px 0 0 0}
@@ -174,7 +174,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .header-social {display:none}
 
 @media screen and (max-width:1199px) {
-    .mobile-menu-open .header-social {display:block; position:relative; text-align:center; float:left; width:100%; font-weight:500; font-size:16px; line-height:19px; margin:25px 0}
+    .mobile-menu-open .header-social {display:block; position:relative; text-align:center; float:left; width:100%; font-weight:500; font-size:18px; line-height:27px; margin:25px 0}
     .header-social ul {margin:0; padding:0; list-style:none; display:inline-block; vertical-align:top}
     .header-social ul li {float:left; margin:0 0 0 22px; padding:0}
     .header-social ul li:first-child {margin:0}
@@ -209,12 +209,17 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .slider-main-ctrl-next {display:inline-block; vertical-align:middle; width:15px; height:27px; background:url(../images/slider-next.png)}
 
 @media screen and (max-width:1199px) {
-    .slider-main-container {right:0; width:271px; padding:33px 21px 20px 21px}
-    .slider-main-text {font-size:12px; line-height:15px; max-width:none}
-    .slider-main-title {font-size:22px; line-height:30px; margin:12px 0 0 -44px}
-    .slider-main-ctrl {font-size:12px; line-height:20px; padding:22px 0 0 0}
+    .slider-main-container {right:0; width:314px; padding:33px 21px 20px 21px}
+    .slider-main-text {font-size:16px; line-height:26px; max-width:none}
+    .slider-main-title {font-size:26px; line-height:38px; margin:12px 0 0 -44px}
+    .slider-main-ctrl {font-size:18px; line-height:27px; padding:22px 0 0 0}
     .slider-main-ctrl-prev {width:8px; height:16px; background:url(../images/slider-prev-mobile.png)}
     .slider-main-ctrl-next {width:8px; height:16px; background:url(../images/slider-next-mobile.png)}
+}
+
+@media screen and (max-width:479px) {
+    .slider-main-container {width:auto; left:0}
+    .slider-main-title {font-size:24px; line-height:36px; margin:12px 0 0 0}
 }
 
 .main-social {position:absolute; left:3.43vw; bottom:14px; font-weight:500; font-size:16px; line-height:30px}
@@ -237,9 +242,14 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .wrapper.preloadsuccess .slider-about-text {opacity:1}
 
 @media screen and (max-width:1199px) {
-    .slider-about-container {right:0; width:271px; padding:30px 15px 40px 30px}
-    .slider-about-title {font-size:22px; line-height:30px; margin:0 0 0 -52px}
-    .slider-about-text {font-size:10px; line-height:15px; margin:12px 0 0 0}
+    .slider-about-container {right:0; width:414px; padding:30px 15px 40px 30px}
+    .slider-about-title {font-size:26px; line-height:38px; margin:0 0 0 -52px}
+    .slider-about-text {font-size:16px; line-height:26px; margin:12px 0 0 0}
+}
+
+@media screen and (max-width:479px) {
+    .slider-about-container {width:auto; left:0}
+    .slider-about-title {font-size:24px; line-height:36px; margin:12px 0 0 0}
 }
 
 .slider-career-container {position:absolute; left:16.92vw; top:50%; transform:translateY(-50%); width:46.30vw; padding:3.07vw 6.77vw 3.64vw 2.76vw; background:rgba(72, 70, 96, 0.7); color:#fff; opacity:0; transition:opacity 0.5s}
@@ -250,9 +260,14 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .wrapper.preloadsuccess .slider-career-text {opacity:1}
 
 @media screen and (max-width:1199px) {
-    .slider-career-container {right:0; left:auto; width:271px; padding:30px 15px 40px 30px}
-    .slider-career-title {font-size:22px; line-height:30px; margin:0 0 0 -52px}
-    .slider-career-text {font-size:10px; line-height:15px; margin:12px 0 0 0}
+    .slider-career-container {right:0; left:auto; width:414px; padding:30px 15px 40px 15px}
+    .slider-career-title {font-size:26px; line-height:38px; margin:0 0 0 -52px}
+    .slider-career-text {font-size:16px; line-height:26px; margin:12px 0 0 0}
+}
+
+@media screen and (max-width:479px) {
+    .slider-career-container {width:auto; left:0}
+    .slider-career-title {font-size:24px; line-height:36px; margin:12px 0 0 0}
 }
 
 .slider-production-container {position:absolute; left:8.17vw; top:50%; transform:translateY(-50%); width:53.38vw; padding:3.07vw 6.77vw 3.64vw 2.76vw; background:rgba(72, 70, 96, 0.7); color:#fff; opacity:0; transition:opacity 0.5s}
@@ -265,9 +280,16 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .slider-production-text > *:last-child {margin-bottom:0}
 
 @media screen and (max-width:1199px) {
-    .slider-production-container {right:0; left:auto; width:271px; padding:30px 15px 40px 30px}
-    .slider-production-title {font-size:22px; line-height:30px; margin:0 0 0 -52px}
-    .slider-production-text {font-size:10px; line-height:15px; margin:12px 0 0 0}
+    .slider-production-container {right:0; width:414px; padding:30px 15px 40px 15px}
+    .slider-production-title {font-size:26px; line-height:38px; margin:0 0 0 -52px}
+    .slider-production-text {font-size:16px; line-height:26px; margin:12px 0 0 0}
+}
+
+@media screen and (max-width:359px) {
+    .slider-production-container {width:auto; left:0}
+    .slider-production-title {font-size:24px; line-height:36px; margin:12px 0 0 0}
+    .slider-production-text {font-size:14px; line-height:21px}
+    .slider-production-text p {margin:12px 0 0 0}
 }
 
 .main-section {position:relative; height:100vh; min-height:47.39vw}
@@ -297,10 +319,10 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 }
 
 @media screen and (max-width:1199px) {
-    .main-section {height:auto; min-height:0; padding:0 0 90px 0}
+    .main-section {height:auto; min-height:0; padding:0 0 120px 0}
     .main-content {padding:0}
     .main-next {bottom:22px}
-    .main-next-text {font-size:10px; line-height:14px}
+    .main-next-text {font-size:16px; line-height:24px}
     .main-next-arrow {padding:10px 0 0 0}
     .main-next-arrow svg {width:19px; height:23px; stroke-width:3px}
 }
@@ -330,11 +352,11 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .main-prefs-item:first-child {padding:0}
     .main-prefs-item-icon {height:auto; line-height:0}
     .main-prefs-item-icon img {height:59px}
-    .main-prefs-item-title {margin:28px 0 0 0; font-size:22px; line-height:32px}
-    .main-prefs-item-text {font-size:14px; line-height:22px}
-    .main-prefs-item-link {position:relative; left:auto; bottom:auto; font-size:12px; line-height:20px; margin:30px 0 0 0}
-    .main-prefs-item-link a::before {top:6px}
-    .main-prefs-item-link a::after {top:6px}
+    .main-prefs-item-title {margin:28px 0 0 0; font-size:24px; line-height:36px}
+    .main-prefs-item-text {font-size:18px; line-height:27px}
+    .main-prefs-item-link {position:relative; left:auto; bottom:auto; font-size:16px; line-height:24px; margin:30px 0 0 0}
+    .main-prefs-item-link a::before {top:7px}
+    .main-prefs-item-link a::after {top:7px}
 }
 
 .main-production-container {position:relative; padding:16.14vw 0 0 0}
@@ -359,12 +381,12 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .main-production-wrapper {margin:0 -25px}
     .main-production-content {display:block; border-spacing:0}
     .main-production-item {display:block; width:auto; padding:37px 25px 31px 25px}
-    .main-production-item-title {font-size:22px; line-height:36px; margin:0; display:block}
+    .main-production-item-title {font-size:24px; line-height:36px; margin:0; display:block}
     .main-production-item-title-inner {height:auto; display:block}
     .main-production-item-content {padding:13px 0 0 0}
-    .main-production-item-text {font-size:16px; line-height:25px}
-    .main-production-item-btn {position:relative; left:auto; bottom:auto; height:auto; padding:23px 0 0 0}
-    .main-production-item-btn a {display:inline-block; height:49px; padding:0 27px; font-size:12px; line-height:49px}
+    .main-production-item-text {font-size:20px; line-height:30px}
+    .main-production-item-btn {position:relative; left:auto; bottom:auto; height:auto; padding:23px 0 10px 0}
+    .main-production-item-btn a {display:block; height:56px; padding:0; font-size:17px; line-height:56px; text-align:center}
 }
 
 .main-career-container {padding:2.44vw 3vw 0 3vw}
@@ -383,8 +405,8 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .main-career-photo {float:none; width:auto; padding:71.87% 0 0 0; overflow:hidden}
     .main-career-photo img {position:absolute; left:0; top:0}
     .main-career-text {float:none; width:auto; margin:0; padding:38px 25px 47px 25px}
-    .main-career-text-title {font-size:22px; line-height:36px; margin:0}
-    .main-career-link a {display:inline-block; height:49px; padding:0 27px; font-size:12px; line-height:49px}
+    .main-career-text-title {font-size:24px; line-height:36px; margin:0}
+    .main-career-link a {display:block; height:56px; padding:0; font-size:17px; line-height:56px; text-align:center}
 }
 
 .main-geo {background:#565263}
@@ -414,14 +436,14 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .main-contacts-left {float:none; width:auto; padding:0}
     .main-contacts-right {float:none; width:auto; padding:0}
     .main-contacts-office::after {width:39px; height:39px; right:-11px; background:url(../images/main-geo-1-mobile.png) no-repeat}
-    .main-contacts-title {font-size:16px; line-height:21px}
-    .main-contacts-text {font-size:12px; line-height:18px; padding:9px 0 0 0}
+    .main-contacts-title {font-size:24px; line-height:36px}
+    .main-contacts-text {font-size:18px; line-height:27px; padding:9px 0 0 0}
     .main-contacts-text p {margin:0}
     .main-contacts-text ul {margin:0}
     .main-contacts-text ul li {margin:10px 0}
     .main-contacts-row {margin:11px 0 0 0}
-    .main-contacts-col {margin:0}
-    .main-contacts-col+.main-contacts-col {float:right}
+    .main-contacts-col {margin:0; float:none}
+    .main-contacts-col+.main-contacts-col {margin:20px 0 0 0}
 }
 
 .main-contacts-production {margin:2.13vw 0 0 0; position:relative}
@@ -472,10 +494,10 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .main-map-window-email {font-weight:500; font-size:16px; line-height:19px; color:#a2a0bd; padding:14px 0 0 0}
 
 @media screen and (max-width:1199px) {
-    .main-map-window-title {font-size:12px; line-height:20px}
-    .main-map-window-address {font-size:12px; line-height:20px; padding:6px 0 0 0}
-    .main-map-window-phones {font-size:12px; line-height:20px; padding:23px 0 0 0}
-    .main-map-window-email {font-size:12px; line-height:20px; padding:4px 0 0 0}
+    .main-map-window-title {font-size:18px; line-height:27px}
+    .main-map-window-address {font-size:18px; line-height:27px; padding:6px 0 0 0}
+    .main-map-window-phones {font-size:18px; line-height:27px; padding:23px 0 0 0}
+    .main-map-window-email {font-size:18px; line-height:27px; padding:4px 0 0 0}
 }
 
 .about-main {padding:5.36vw 0 0 0}
@@ -496,7 +518,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .about-main-photo {float:none; width:auto; position:relative; overflow:hidden; padding:71.87% 0 0 0}
     .about-main-photo img {position:absolute; left:0; top:0}
     .about-main-text {padding:39px 25px 0 25px; margin:0}
-    .about-main-text-title {font-size:22px; line-height:32px}
+    .about-main-text-title {font-size:24px; line-height:36px}
     .about-main-text-descr {margin:14px 0 0 0}
 }
 
@@ -527,10 +549,10 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 
 @media screen and (max-width:1199px) {
     .about-video {margin:32px 0 0 0; padding:0 0 45px 0}
-    .about-video-prev {left:0; bottom:0; top:auto; transform:none; text-align:right; width:106px; font-size:10px; line-height:12px; padding:0}
+    .about-video-prev {left:0; bottom:0; top:auto; transform:none; text-align:right; width:106px; font-size:14px; line-height:21px; padding:0}
     .about-video-prev::before {display:none}
     .about-video-prev::after {display:none}
-    .about-video-next {right:0; bottom:0; top:auto; transform:none; width:106px; font-size:10px; line-height:12px; padding:0}
+    .about-video-next {right:0; bottom:0; top:auto; transform:none; width:106px; font-size:14px; line-height:21px; padding:0}
     .about-video-next::before {display:none}
     .about-video-next::after {display:none}
     .about-video-player {height:53.12vw}
@@ -563,8 +585,8 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .career-btn a:hover {background:#d9c7eb}
 
 @media screen and (max-width:1199px) {
-    .career-btn {padding:42px 0 0 25px; text-align:left}
-    .career-btn a {display:inline-block; height:49px; padding:0 27px; font-size:12px; line-height:49px}
+    .career-btn {padding:42px 25px 0 25px; text-align:left}
+    .career-btn a {display:block; height:56px; padding:0; font-size:17px; line-height:56px; text-align:center}
 }
 
 .production-serts {padding:5.36vw 0 0 0}
@@ -581,7 +603,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 @media screen and (max-width:1199px) {
     .production-serts {padding:31px 0 42px 0; background:rgba(244, 242, 247, 0.7)}
     .production-serts-container {background:none; padding:0}
-    .production-serts-header {font-size:22px; line-height:32px}
+    .production-serts-header {font-size:24px; line-height:36px}
     .production-serts-list {margin:28px 25px 0 25px}
     .production-serts-item {width:100%}
     .production-serts-item-inner {padding:0; text-align:center; height:170px; line-height:170px}
@@ -621,10 +643,10 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .production-factory-container {display:block}
     .production-factory-content {margin:0; padding:48px 0 0 0; background:none}
     .production-factory:nth-child(even) .production-factory-content {margin:0}
-    .production-factory-title {font-size:16px; line-height:21px; padding:0 0 0 27px}
-    .production-factory-title::before {left:0; top:-4px; width:17px; height:31px}
+    .production-factory-title {font-size:24px; line-height:36px; padding:0 0 0 27px}
+    .production-factory-title::before {left:0; top:2px; width:17px; height:31px}
     .production-factory-text {margin:21px 0 0 0; min-height:0}
-    .production-factory-link {font-size:12px; line-height:20px; margin:30px 0 0 0}
+    .production-factory-link {font-size:20px; line-height:30px; margin:30px 0 0 0}
     .production-factory-link a::before {top:6px}
     .production-factory-link a::after {top:6px}
 }
@@ -644,8 +666,8 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 @media screen and (max-width:1199px) {
     .footer-content {float:none; margin:0}
     .footer-logo img {width:135px; height:40px}
-    .footer-copyrights {font-size:14px; line-height:20px}
-    .footer-copyrights-text {max-width:none; font-size:12px; line-height:20px}
+    .footer-copyrights {font-size:18px; line-height:27px}
+    .footer-copyrights-text {max-width:none; font-size:18px; line-height:27px}
 }
 
 .footer-menu {float:right; font-size:14px; line-height:20px; margin:41px 3.48vw 0 0}
@@ -666,9 +688,9 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 }
 
 @media screen and (max-width:1199px) {
-    .footer-menu {float:none; font-size:12px; line-height:20px; margin:22px 0 0 0}
+    .footer-menu {float:none; font-size:18px; line-height:27px; margin:40px 0 0 0}
     .footer-menu ul {float:none; margin:0; max-width:none}
-    .footer-menu ul li {margin:8px 0 0 0}
+    .footer-menu ul li {margin:23px 0 0 0}
 }
 
 .window-open,
@@ -712,12 +734,12 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 @media screen and (max-width:1199px) {
     .window-factory-left {float:none; width:auto}
     .window-factory-photo {margin:0 -25px}
-    .window-factory-title-mobile {display:block; margin:48px 0 0 0; font-weight:bold; font-size:16px; line-height:19px; text-transform:uppercase}
+    .window-factory-title-mobile {display:block; margin:48px 0 0 0; font-weight:bold; font-size:24px; line-height:36px; text-transform:uppercase}
     .window-factory-left-row {margin:20px 0 0 0}
     .window-factory-left-row+.window-factory-left-row {margin:20px 0 0 0}
-    .window-factory-left-col {margin:0 0 0 40px}
+    .window-factory-left-col {margin:20px 0 0 0; float:none}
     .window-factory-left-col:first-child {margin:0}
-    .window-factory-left-title {font-size:16px; line-height:19px}
+    .window-factory-left-title {font-size:24px; line-height:36px}
     .window-factory-left-text {padding:10px 0 0 0}
 }
 
@@ -725,7 +747,7 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 .window-factory-title {font-size:1.66vw; line-height:1.34em; text-transform:uppercase; font-weight:bold}
 
 @media screen and (max-width:1199px) {
-    .window-factory-right {float:none; width:auto; margin:20px 0 0 0; line-height:18px}
+    .window-factory-right {float:none; width:auto; margin:20px 0 0 0; line-height:27px}
     .window-factory-title {display:none}
 }
 
@@ -770,7 +792,7 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 
 @media screen and (max-width:1199px) {
     .page-form {max-width:none; margin:9px 0 0 0; padding:0 25px}
-    .page-form-notice {font-size:12px; line-height:18px; margin:0}
+    .page-form-notice {font-size:18px; line-height:27px; margin:0}
 }
 
 .form-row {margin:13px 0; display:table; width:100%}
@@ -790,7 +812,7 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 
 @media screen and (max-width:1199px) {
     .form-row {margin:22px 0}
-    .form-label {display:block; height:auto; width:auto; font-size:12px; line-height:18px}
+    .form-label {display:block; height:auto; width:auto; font-size:18px; line-height:27px}
     .form-field {display:block; padding:0; margin:13px 0 0 0}
     .form-row-reverse .form-label {width:auto; padding:0}
     .form-row-reverse .form-field {width:auto}
@@ -822,8 +844,9 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 
 @media screen and (max-width:1199px) {
     .form-input input,
-    .form-input textarea {font-size:12px; line-height:18px; padding:9px 11px 10px 11px; height:39px}
+    .form-input textarea {font-size:18px; line-height:27px; padding:15px 11px 16px 11px; height:56px}
     .form-input textarea {height:auto}
+    .form-field-short .form-input {max-width:none}
 }
 
 .form-select {position:relative}
@@ -842,6 +865,11 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 .form-radio label span::before {content:""; display:block; position:absolute; left:0; top:1px; width:20px; height:20px; border:1px solid #9d9d9d; border-radius:50%}
 .form-radio label input:checked+span::after {content:""; display:block; position:absolute; left:6px; top:7px; width:8px; height:8px; background:#5391ff; border-radius:50%}
 
+@media screen and (max-width:1199px) {
+    .form-radio label span::before {top:-3px}
+    .form-radio label input:checked+span::after {top:3px}
+}
+
 .form-radio-policy {background:#f6f9fe; border:1px solid #5391ff; padding:34px 0 40px 0}
 .form-radio-policy::after {content:""; display:block; clear:both}
 .form-radio-policy label {float:left; margin:0 0 0 30px; cursor:pointer}
@@ -854,10 +882,10 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 @media screen and (max-width:1199px) {
     .form-radio-policy {padding:20px 0 17px 0}
     .form-radio-policy label {float:none; margin:0 20px; display:block}
-    .form-radio-policy label span {font-size:12px; padding:0 0 0 35px; line-height:18px}
+    .form-radio-policy label span {font-size:20px; padding:0 0 0 35px; line-height:30px}
     .form-radio-policy label span::before {top:-3px}
     .form-radio-policy label input:checked+span::after {top:3px}
-    .form-radio-policy-text {margin:4px 20px 0 55px; font-size:12px; line-height:16px}
+    .form-radio-policy-text {margin:4px 20px 0 55px; font-size:20px; line-height:30px}
 }
 
 .form-ctrl {margin:45px 0 0 0; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
@@ -867,8 +895,8 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 @media screen and (max-width:1199px) {
     .form-ctrl {margin:25px 0 0 0}
     .form-ctrl::after {content:""; display:block; clear:both}
-    .form-submit {float:left}
-    .form-reset {float:right; margin:0}
+    .form-submit {float:none; display:block}
+    .form-reset {float:none; display:block; margin:20px 0 0 0}
 }
 
 .form-ctrl input {display:inline-block; margin:0; padding:0 50px; overflow:visible; outline:none; vertical-align:top; height:80px; text-decoration:none; color:#fff; border:none; border-radius:0; font:bold 21px/80px Arial, sans-serif; letter-spacing:0; text-align:center; transition:all 0.2s; position:relative; -webkit-appearance:none; cursor:pointer}
@@ -880,7 +908,7 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 .form-ctrl .form-reset input:hover {background:#d9c7eb}
 
 @media screen and (max-width:1199px) {
-    .form-ctrl input {padding:0 25px; font-size:12px; height:48px; line-height:48px}
+    .form-ctrl input {display:block; width:100%; padding:0; font-size:17px; height:56px; line-height:56px}
 }
 
 .form-captcha-inner {display:inline-block; vertical-align:top; position:relative}
@@ -921,7 +949,7 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 @media screen and (max-width:1199px) {
     .links-list {margin:30px 0}
     .links-item a {height:56px; padding:10px 30px}
-    .links-item a span {font-size:12px; line-height:18px}
+    .links-item a span {font-size:20px; line-height:30px}
     .links-item em {display:block; margin:0}
     .links-item em::before {display:none}
 }
@@ -951,12 +979,12 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 .window-external+.window-close svg {width:30px; height:30px; fill:#433058; stroke:#433058}
 
 @media screen and (max-width:1199px) {
-    .window-external {width:100vw; padding:58px 25px 20px 25px; font-size:20px}
-    .window-external-title {font-size:16px; line-height:24px}
+    .window-external {width:100vw; padding:58px 25px 20px 25px; font-size:18px; line-height:27px}
+    .window-external-title {font-size:22px; line-height:33px}
     .window-external-text {margin:30px 0 0 0}
     .window-external-confirm {margin:30px 0 0 0}
     .window-external-btns {margin:30px 0 0 0}
-    .window-external-btns a {width:calc(50% - 20px); height:49px; font-size:12px; line-height:49px}
+    .window-external-btns a {width:calc(50% - 20px); height:56px; font-size:17px; line-height:56px}
     .window-external-btns a+a {margin-left:20px}
     .window-external+.window-close {right:25px; top:22px; width:16px; height:16px}
     .window-external+.window-close svg {width:16px; height:16px; fill:#000; stroke:#000}
@@ -976,5 +1004,5 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
     .page-404-title {font-size:30px; line-height:45px}
     .page-404-text {margin:20px 0 0 0; font-size:20px; line-height:30px}
     .page-404-btn {margin:20px 0 0 0}
-    .page-404-btn a {width:auto; padding:0 27px; height:49px; font-size:12px; line-height:49px}
+    .page-404-btn a {width:auto; padding:0 27px; height:49px; font-size:20px; line-height:49px}
 }

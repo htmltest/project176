@@ -204,6 +204,10 @@
     transition: opacity 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease;
     transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s;
     transition: opacity 0.3s ease, transform 0.3s ease, left 0s 0s, -webkit-transform 0.3s ease; }
+    
+    @media screen and (max-width:1199px) {
+        .datepicker {font-size:18px}
+    }
 
 .datepicker-inline .datepicker {
   border-color: #d7d7d7;
