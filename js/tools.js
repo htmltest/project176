@@ -150,7 +150,7 @@ $(document).ready(function() {
 
     $.validator.addMethod('phoneRU',
         function(phone_number, element) {
-            return this.optional(element) || phone_number.match(/^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
+            return this.optional(element) || phone_number.match(/^\+\d+$/);
         },
         'Ошибка заполнения'
     );
@@ -337,6 +337,22 @@ $(document).ready(function() {
         }
     });
 
+    $('#pregnancyYes').each(function() {
+        if ($('#pregnancyYes').prop('checked')) {
+            $('#pregnancyDuration').removeClass('hidden');
+        } else {
+            $('#pregnancyDuration').addClass('hidden');
+        }
+    });
+    
+    $('#pregnancyYes, #pregnancyNo').change(function() {
+        if ($('#pregnancyYes').prop('checked')) {
+            $('#pregnancyDuration').removeClass('hidden');
+        } else {
+            $('#pregnancyDuration').addClass('hidden');
+        }
+    });
+
 });
 
 function windowOpen(linkWindow, dataWindow) {
@@ -464,7 +480,13 @@ Pace.on('done', function() {
 });
 
 function initForm(curForm) {
-    curForm.find('input.phoneRU').mask('+7 (000) 000-00-00');
+    curForm.find('input.phoneRU').mask('+ZZZZZZZZZZZZZZZZZZZZ', {
+        translation: {
+            'Z': {
+                pattern: /[0-9]/, optional: true
+            }
+        }
+    });
 
     $('.form-reset input').click(function() {
         window.setTimeout(function() {
@@ -554,7 +576,8 @@ function initForm(curForm) {
             minDate: minDate,
             maxDate: maxDate,
             startDate: startDate,
-            toggleSelected: false
+            toggleSelected: false,
+            autoClose: true
         });
         if (typeof ($(this).attr('value')) != 'undefined') {
             var curValue = $(this).val();
@@ -579,7 +602,33 @@ function initForm(curForm) {
     });
 
     curForm.validate({
-        ignore: ''
+        ignore: '',
+        submitHandler: function(form) {
+            var curForm = $(form);
+            if (curForm.hasClass('recaptcha-form')) {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LdHSvgcAAAAAHfkqTliNRLNbN8n4oSa0UJfMCU3', {action: 'submit'}).then(function(token) {
+                        $.ajax({
+                            type: 'POST',
+                            url: curForm.attr('data-captchaurl'),
+                            dataType: 'json',
+                            data: 'recaptcha_response=' + token,
+                            cache: false
+                        }).fail(function(jqXHR, textStatus, errorThrown) {
+                            alert('Сервис временно недоступен, попробуйте позже.' + textStatus);
+                        }).done(function(data) {
+                            if (data.status) {
+                                form.submit();
+                            } else {
+                                alert('Не пройдена проверка Google reCAPTCHA v3.');
+                            }
+                        });
+                    });
+                });
+            } else {
+                form.submit();
+            }
+        }
     });
 }
 
@@ -632,30 +681,6 @@ $(document).ready(function() {
     });
 
 });
-
-var captchaKey = '6Ldk5DMUAAAAALWRTOM96EQI_0OApr59RQHoMirA';
-var captchaArray = [];
-
-var onloadCallback = function() {
-    $('.g-recaptcha').each(function() {
-        var newCaptcha = grecaptcha.render(this, {
-            'sitekey' : captchaKey,
-            'callback' : verifyCallback,
-        });
-        captchaArray.push([newCaptcha, $(this)]);
-    });
-};
-
-var verifyCallback = function(response) {
-    for (var i = 0; i < captchaArray.length; i++) {
-        if (grecaptcha.getResponse(captchaArray[i][0])) {
-            var curInput = captchaArray[i][1].next();
-            curInput.val(response);
-            curInput.removeClass('error');
-            curInput.parent().find('label.error').remove();
-        }
-    }
-};
 
 function updateFilterLinks() {
     var curYear = $('.links-filter-item.active a').attr('data-year');

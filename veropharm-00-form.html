@@ -64,7 +64,9 @@
                     <div class="page-inner-title">сообщение<br /> о нежелательном явлении</div>
 
                     <div class="page-form">
-                        <form action="#" method="post">
+                        <form action="#" method="post" data-captchaurl="ajax/captcha.php" class="recaptcha-form">
+                            <script src="https://www.google.com/recaptcha/api.js?render=6LdHSvgcAAAAAHfkqTliNRLNbN8n4oSa0UJfMCU3"></script>
+
                             <div class="page-form-notice">Поля, отмеченные *, обязательны для заполнения</div>
 
                             <div class="page-form-subtitle">Информация о пациенте</div>
@@ -113,20 +115,20 @@
                                 <div class="form-field">
                                     <div class="form-radio">
                                         <label>
-                                            <input type="radio" name="pregnancy" value="Y" />
+                                            <input type="radio" name="pregnancy" value="Y" id="pregnancyYes" />
                                             <span>Да</span>
                                         </label>
                                     </div>
                                     <div class="form-radio">
                                         <label>
-                                            <input type="radio" name="pregnancy" value="N" checked="checked" />
+                                            <input type="radio" name="pregnancy" value="N" checked="checked" id="pregnancyNo" />
                                             <span>Нет</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="form-row">
+                            <div class="form-row" id="pregnancyDuration">
                                 <div class="form-label">Срок беременности, недель</div>
                                 <div class="form-field form-field-short">
                                     <div class="form-input"><input type="text" name="duration_pregnancy" value="" placeholder="Кол-во недель" /></div>
@@ -220,7 +222,7 @@
                             <div class="form-row">
                                 <div class="form-label">Телефон*</div>
                                 <div class="form-field">
-                                    <div class="form-input"><input type="text" name="phone" value="" placeholder="+7 (---) --- -- --" class="required phoneRU" /></div>
+                                    <div class="form-input"><input type="text" name="phone" value="" placeholder="+7 ----------" class="required phoneRU" /></div>
                                 </div>
                             </div>
 
@@ -264,15 +266,7 @@
                             <div class="form-row">
                                 <div class="form-label">Страна</div>
                                 <div class="form-field">
-                                    <div class="form-select">
-                                        <select name="country" data-placeholder="Укажите страну">
-                                            <option value=""></option>
-                                            <option value="1">Вариант 1</option>
-                                            <option value="2">Вариант 2</option>
-                                            <option value="3">Вариант 3</option>
-                                            <option value="4">Вариант 4</option>
-                                        </select>
-                                    </div>
+                                    <div class="form-input"><input type="text" name="country" value="" placeholder="Укажите страну" /></div>
                                 </div>
                             </div>
 
@@ -379,48 +373,48 @@
                                 </div>
                             </div>
 
-                            <div class="form-row form-field-radios-row">
+                            <div class="form-row form-field-checkbox-row">
                                 <div class="form-label">Предпринятые меры</div>
                                 <div class="form-field">
-                                    <div class="form-radio">
+                                    <div class="form-checkbox">
                                         <label>
-                                            <input type="radio" name="measures" value="1" checked="checked" />
+                                            <input type="checkbox" name="measures[1]" value="1" checked="checked" />
                                             <span>Без лечения</span>
                                         </label>
                                     </div>
-                                    <div class="form-radio">
+                                    <div class="form-checkbox">
                                         <label>
-                                            <input type="radio" name="measures" value="2" />
+                                            <input type="checkbox" name="measures[2]" value="2" />
                                             <span>Отмена подозреваемого лекарственного препарата</span>
                                         </label>
                                     </div>
-                                    <div class="form-radio">
+                                    <div class="form-checkbox">
                                         <label>
-                                            <input type="radio" name="measures" value="3" />
+                                            <input type="checkbox" name="measures[3]" value="3" />
                                             <span>Снижение дозы подозреваемого лекарственного препарата</span>
                                         </label>
                                     </div>
-                                    <div class="form-radio">
+                                    <div class="form-checkbox">
                                         <label>
-                                            <input type="radio" name="measures" value="4" />
+                                            <input type="checkbox" name="measures[4]" value="4" />
                                             <span>Отмена сопутствующего лечения</span>
                                         </label>
                                     </div>
-                                    <div class="form-radio">
+                                    <div class="form-checkbox">
                                         <label>
-                                            <input type="radio" name="measures" value="5" />
+                                            <input type="checkbox" name="measures[5]" value="5" />
                                             <span>Лекарственная терапия</span>
                                         </label>
                                     </div>
-                                    <div class="form-radio">
+                                    <div class="form-checkbox">
                                         <label>
-                                            <input type="radio" name="measures" value="6" />
+                                            <input type="checkbox" name="measures[6]" value="6" />
                                             <span>Немедикаментозная терапия (в т.ч. хирургическое вмешательство)</span>
                                         </label>
                                     </div>
-                                    <div class="form-radio">
+                                    <div class="form-checkbox">
                                         <label>
-                                            <input type="radio" name="measures" value="7" />
+                                            <input type="checkbox" name="measures[7]" value="7" />
                                             <span>Другое, указать</span>
                                         </label>
                                     </div>
@@ -538,25 +532,20 @@
                             <div class="page-form-descr">Предоставьте, пожалуйста, любую дополнительную информацию о нежелательном явлении, лекарственной терапии, взаимодействии лекарственных препаратов, данные клинических, лабораторных, рентгенологических исследований и аутопсии, включая определение концентрации ЛС в крови/тканях, если таковые имеются и связаны с нежелательным явлением (пожалуйста, приведите даты)</div>
 
                             <div class="form-row">
-                                <div class="form-label">Сообщение</div>
+                                <div class="form-label form-label-top">Сообщение</div>
                                 <div class="form-field">
-                                    <div class="form-input"><textarea name="message" rows="5" cols="10" placeholder="Опишите событие" class="required"></textarea></div>
+                                    <div class="form-input"><textarea name="message" rows="5" cols="10" placeholder="Опишите событие"></textarea></div>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-radio-policy">
                                     <label>
-                                        <input type="radio" name="policy" value="confirm" checked="checked" />
+                                        <input type="checkbox" name="policy" value="confirm" checked="checked" class="required" />
                                         <span>Я согласен</span>
                                     </label>
                                     <div class="form-radio-policy-text">Настоящим, делая отметку в поле «Я согласен», я  даю свое согласие компании ООО «Эбботт» на обработку моих персональных данных, в&nbsp;том числе передачу третьим лицам.</div>
                                 </div>
-                            </div>
-
-                            <div class="form-captcha">
-                                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                                <div class="g-recaptcha" data-sitekey="6Ldk5DMUAAAAALWRTOM96EQI_0OApr59RQHoMirA"></div>
                             </div>
 
                             <div class="form-ctrl">
