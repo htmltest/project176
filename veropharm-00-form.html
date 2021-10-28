@@ -452,67 +452,69 @@
                                 <div class="form-field">
                                     <div class="form-radio">
                                         <label>
-                                            <input type="radio" name="other" value="Y" checked="checked" />
+                                            <input type="radio" name="other" value="Y" checked="checked" id="otherYes" />
                                             <span>Да</span>
                                         </label>
                                     </div>
                                     <div class="form-radio">
                                         <label>
-                                            <input type="radio" name="other" value="N" />
+                                            <input type="radio" name="other" value="N" id="otherNo" />
                                             <span>Нет</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-label">МНН</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[0][international_name]" value="" placeholder="Пример: суматриптан" /></div>
+                            <div id="otherBlock">
+                                <div class="form-row">
+                                    <div class="form-label">МНН</div>
+                                    <div class="form-field">
+                                        <div class="form-input"><input type="text" name="other[0][international_name]" value="" placeholder="Пример: суматриптан" /></div>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-row">
-                                <div class="form-label">Торговое название</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[0][trade_name]" value="" placeholder="Пример: амигренин" /></div>
+                                <div class="form-row">
+                                    <div class="form-label">Торговое название</div>
+                                    <div class="form-field">
+                                        <div class="form-input"><input type="text" name="other[0][trade_name]" value="" placeholder="Пример: амигренин" /></div>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-row">
-                                <div class="form-label">Путь введения</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[0][way]" value="" placeholder="Укажите путь введения" /></div>
+                                <div class="form-row">
+                                    <div class="form-label">Путь введения</div>
+                                    <div class="form-field">
+                                        <div class="form-input"><input type="text" name="other[0][way]" value="" placeholder="Укажите путь введения" /></div>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-row-dates">
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата начала терапии</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="other[0][date_start]" value="" /></div>
+                                <div class="form-row-dates">
+                                    <div class="form-row-date">
+                                        <div class="form-row">
+                                            <div class="form-label">Дата начала терапии</div>
+                                            <div class="form-field form-field-short">
+                                                <div class="form-input form-input-date"><input type="text" name="other[0][date_start]" value="" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row-date">
+                                        <div class="form-row">
+                                            <div class="form-label">Дата окончания терапии</div>
+                                            <div class="form-field form-field-short">
+                                                <div class="form-input form-input-date"><input type="text" name="other[0][date_stop]" value="" /></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-row-date">
-                                    <div class="form-row">
-                                        <div class="form-label">Дата окончания терапии</div>
-                                        <div class="form-field form-field-short">
-                                            <div class="form-input form-input-date"><input type="text" name="other[0][date_stop]" value="" /></div>
-                                        </div>
+
+                                <div class="form-row">
+                                    <div class="form-label">Показание</div>
+                                    <div class="form-field">
+                                        <div class="form-input"><input type="text" name="other[0][indications]" value="" placeholder="Пример: мигрень" /></div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="form-row">
-                                <div class="form-label">Показание</div>
-                                <div class="form-field">
-                                    <div class="form-input"><input type="text" name="other[0][indications]" value="" placeholder="Пример: мигрень" /></div>
-                                </div>
+                                <div class="form-add-link"><a href="#">Добавить лекарственное средство</a></div>
                             </div>
-
-                            <div class="form-add-link"><a href="#">Добавить лекарственное средство</a></div>
 
                             <div class="form-row">
                                 <div class="form-label">Анамнез / сопутствующие заболевания</div>

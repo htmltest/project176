@@ -1021,3 +1021,5 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
     .page-404-btn {margin:20px 0 0 0}
     .page-404-btn a {width:auto; padding:0 27px; height:49px; font-size:20px; line-height:49px}
 }
+
+#otherBlock.hidden {display:none}

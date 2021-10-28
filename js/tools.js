@@ -353,6 +353,22 @@ $(document).ready(function() {
         }
     });
 
+    $('#otherYes').each(function() {
+        if ($('#otherYes').prop('checked')) {
+            $('#otherBlock').removeClass('hidden');
+        } else {
+            $('#otherBlock').addClass('hidden');
+        }
+    });
+    
+    $('#otherYes, #otherNo').change(function() {
+        if ($('#otherYes').prop('checked')) {
+            $('#otherBlock').removeClass('hidden');
+        } else {
+            $('#otherBlock').addClass('hidden');
+        }
+    });
+
 });
 
 function windowOpen(linkWindow, dataWindow) {
