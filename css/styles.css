@@ -786,8 +786,8 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 .page-form form {margin:0; padding:0}
 .page-form-notice {text-transform:uppercase; font-weight:bold; font-size:21px; line-height:28px; color:#7e7c90; margin:0 0 0 273px}
 .page-form-subtitle {text-transform:uppercase; font-weight:bold; font-size:27px; line-height:32px; color:#433058; margin:57px 0 33px 0}
-.form-row+.page-form-subtitle {margin:95px 0 33px 0}
-.form-row-dates+.page-form-subtitle {margin:95px 0 33px 0}
+.form-row+.page-form-subtitle {margin:48px 0 33px 0; border-top:1px solid #6d6278; padding:48px 0 0 0}
+.form-row-dates+.page-form-subtitle {margin:48px 0 33px 0; border-top:1px solid #6d6278; padding:48px 0 0 0}
 .page-form-descr {margin:30px 0 0 0; font-size:20px; line-height:30px; color:#383738}
 
 @media screen and (max-width:1199px) {
@@ -928,7 +928,7 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
     .form-ctrl input {display:block; width:100%; padding:0; font-size:17px; height:56px; line-height:56px}
 }
 
-.form-add-link {margin:30px 0 80px 0; font-size:27px; line-height:41px}
+.form-add-link {margin:30px 0 48px 0; font-size:27px; line-height:41px}
 .form-add-link a {text-decoration:underline}
 .form-add-link a:hover {text-decoration:none}
 
@@ -1023,3 +1023,4 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 }
 
 #otherBlock.hidden {display:none}
+#otherBlock+.form-row {border-top:1px solid #6d6278; padding-top:48px; margin-top:48px}
