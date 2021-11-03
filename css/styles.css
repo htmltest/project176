@@ -782,12 +782,12 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
     .page-inner-title {font-size:22px; line-height:30px; padding:33px 25px 0 25px}
 }
 
-.page-form {max-width:1088px; margin:53px auto 0 auto}
+.page-form {max-width:950px; margin:53px 0 0 0; margin:0 0 0 11.82vw}
 .page-form form {margin:0; padding:0}
 .page-form-notice {text-transform:uppercase; font-weight:bold; font-size:21px; line-height:28px; color:#7e7c90; margin:0 0 0 273px}
 .page-form-subtitle {text-transform:uppercase; font-weight:bold; font-size:27px; line-height:32px; color:#433058; margin:57px 0 33px 0}
-.form-row+.page-form-subtitle {margin:48px 0 33px 0; border-top:1px solid #6d6278; padding:48px 0 0 0}
-.form-row-dates+.page-form-subtitle {margin:48px 0 33px 0; border-top:1px solid #6d6278; padding:48px 0 0 0}
+.form-row+.page-form-subtitle {margin:48px 0 33px 0}
+.form-row-dates+.page-form-subtitle {margin:48px 0 33px 0}
 .page-form-descr {margin:30px 0 0 0; font-size:20px; line-height:30px; color:#383738}
 
 @media screen and (max-width:1199px) {
@@ -797,9 +797,9 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 
 .form-row {margin:13px 0; display:table; width:100%}
 .form-row.hidden {display:none}
-.form-label {display:table-cell; vertical-align:middle; width:263px; height:85px; font-weight:bold; font-size:18px; line-height:22px; color:#433058; text-transform:uppercase}
-.form-field-radios-row .form-label {vertical-align:top; padding-top:22px}
-.form-field-checkbox-row .form-label {vertical-align:top; padding-top:22px}
+.form-label {display:table-cell; vertical-align:middle; width:263px; height:85px; font-weight:bold; font-size:18px; line-height:22px; color:#433058; padding-top:22px}
+.form-field-radios-row .form-label {vertical-align:top}
+.form-field-checkbox-row .form-label {vertical-align:top}
 .form-label-top {vertical-align:top}
 .form-field {display:table-cell; vertical-align:middle; padding:0 0 0 10px}
 .form-row-reverse .form-label {width:auto; padding:0 10px 0 0}
@@ -934,13 +934,13 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 
 .page-form-add-block {display:none}
 
-.page-text {padding:5.56vw 8.1vw 0 8.1vw; color:#3a3a3b}
+.page-text {padding:5.56vw 0 0 0; color:#3a3a3b; max-width:950px; margin:0 0 0 8.1vw}
 .page-text strong {color:#403357}
 .page-text a {color:#3a3a3b; text-decoration:none; border-bottom:1px solid #bfb9c5; transition:border-color 0.2s}
 .page-text a:hover {border-bottom-color:transparent}
 
 @media screen and (max-width:1199px) {
-    .page-text {padding:30px 25px 0 25px}
+    .page-text {padding:30px 25px 0 25px; margin:0; max-width:none}
 }
 
 .page-text-title {font-weight:bold; font-size:2.5vw; line-height:1.25em; text-transform:uppercase; color:#403357; letter-spacing:0; margin:0 0 0.21em 0}
@@ -979,7 +979,7 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 .links-empty.visible {display:block}
 
 @media screen and (max-width:1199px) {
-    .links-filter-item {font-size:18px; line-height:27px}
+    .links-filter-item {font-size:22px; line-height:33px}
 }
 
 .window-external {width:46.25vw; padding:3.11vw; font-size:0.98vw; line-height:1.52em}
@@ -1024,3 +1024,32 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 
 #otherBlock.hidden {display:none}
 #otherBlock+.form-row {border-top:1px solid #6d6278; padding-top:48px; margin-top:48px}
+
+.up-link {visibility:hidden; opacity:0; position:fixed; right:5px; bottom:39px; z-index:99; width:50px; height:50px; background:#c39fdf url(../images/up-link.png) no-repeat center; transition:background-color 0.2s}
+@media screen and (min-width:1200px) {
+    .up-link:hover {background-color:#d9c7eb}
+    .up-link:active {background-color:#b795d1}
+}
+.up-link.visible {visibility:visible; opacity:1}
+
+.pager {margin:30px 0; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
+.pager a {display:inline-block; vertical-align:middle; width:38px; height:38px; font-size:16px; line-height:38px; font-weight:500; letter-spacing:0; color:#bcc3d3; text-decoration:none; border-bottom:none}
+.pager a.active {color:#fff; background:#c5a3e0; cursor:default}
+.pager a.pager-prev {width:36px; height:16px; background:url(../images/pager.png); margin:0 65px 0 0}
+.pager a.pager-prev.disabled {background-position:left -16px; cursor:default; pointer-events:none}
+.pager a.pager-next {width:36px; height:16px; background:url(../images/pager.png) -36px top; margin:0 0 0 65px}
+.pager a.pager-prev+a.pager-next {margin:0 0 0 -25px}
+.pager a.pager-next.disabled {background-position:-36px -16px; cursor:default; pointer-events:none}
+
+@media screen and (max-width:1199px) {
+    .pager {position:relative; padding:0 50px}
+    .pager a.pager-prev {position:absolute; left:0; top:50%; margin-top:-8px}
+    .pager a.pager-next {position:absolute; right:0; top:50%; margin-top:-8px}
+    .pager a.pager-prev+a.pager-next {margin:-8px 0 0 -25px}
+}
+
+
+.links-pager {display:none}
+.links-pager.visible {display:block}
+
+.links-item.pager-hidden {display:none}

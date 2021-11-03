@@ -344,7 +344,7 @@ $(document).ready(function() {
             $('#pregnancyDuration').addClass('hidden');
         }
     });
-    
+
     $('#pregnancyYes, #pregnancyNo').change(function() {
         if ($('#pregnancyYes').prop('checked')) {
             $('#pregnancyDuration').removeClass('hidden');
@@ -360,13 +360,18 @@ $(document).ready(function() {
             $('#otherBlock').addClass('hidden');
         }
     });
-    
+
     $('#otherYes, #otherNo').change(function() {
         if ($('#otherYes').prop('checked')) {
             $('#otherBlock').removeClass('hidden');
         } else {
             $('#otherBlock').addClass('hidden');
         }
+    });
+
+    $('.up-link').click(function(e) {
+        $('html, body').animate({'scrollTop': 0});
+        e.preventDefault();
     });
 
 });
@@ -482,6 +487,18 @@ $(window).on('load resize scroll', function() {
             }
         });
     });
+
+    if (windowScroll > windowHeight) {
+        $('.up-link').addClass('visible');
+    } else {
+        $('.up-link').removeClass('visible');
+    }
+
+    if (windowScroll + windowHeight > $('footer').offset().top) {
+        $('.up-link').css({'margin-bottom': (windowScroll + windowHeight) - $('footer').offset().top});
+    } else {
+        $('.up-link').css({'margin-bottom': 0});
+    }
 
 });
 
@@ -698,6 +715,8 @@ $(document).ready(function() {
 
 });
 
+var pageSize = 10;
+
 function updateFilterLinks() {
     var curYear = $('.links-filter-item.active a').attr('data-year');
     $('.links-item').addClass('hidden');
@@ -709,4 +728,78 @@ function updateFilterLinks() {
         $('.links-list').removeClass('hidden');
         $('.links-empty').removeClass('visible');
     }
+
+    $('.links-item').removeClass('pager-hidden');
+    var countLinks = $('.links-item:not(.hidden)').length;
+    var countPages = Math.ceil(countLinks / pageSize);
+    if (countPages > 1) {
+        var htmlPages = '<div class="pager">' +
+                            '<a href="#" class="pager-prev disabled"></a>';
+        for (var i = 0; i < countPages; i++) {
+            var classActive = '';
+            if (i == 0) {
+                classActive = ' class="active"';
+            }
+            htmlPages    +=     '<a href="#"' + classActive + '>' + (i + 1) + '</a>';
+        }
+        htmlPages    +=     '<a href="#" class="pager-next"></a>' +
+                        '</div>';
+        $('.links-pager').html(htmlPages);
+        $('.links-pager').addClass('visible');
+
+        $('.links-item:not(.hidden)').each(function() {
+            var curLink = $(this);
+            var curID = $('.links-item:not(.hidden)').index(curLink);
+            if (curID >= pageSize) {
+                curLink.addClass('pager-hidden');
+            }
+        });
+    } else {
+        $('.links-pager').removeClass('visible');
+    }
 }
+
+$(document).ready(function() {
+
+    $('body').on('click', '.links-pager .pager a', function(e) {
+        var curLink = $(this);
+        if (curLink.hasClass('pager-prev') && !curLink.hasClass('disabled')) {
+            var curActiveID = $('.links-pager .pager a').index($('.links-pager .pager a.active'));
+            curActiveID--;
+            $('.links-pager .pager a.active').removeClass('active')
+            $('.links-pager .pager a').eq(curActiveID).addClass('active')
+        } else if (curLink.hasClass('pager-next') && !curLink.hasClass('disabled')) {
+            var curActiveID = $('.links-pager .pager a').index($('.links-pager .pager a.active'));
+            curActiveID++;
+            $('.links-pager .pager a.active').removeClass('active')
+            $('.links-pager .pager a').eq(curActiveID).addClass('active')
+        } else {
+            $('.links-pager .pager a.active').removeClass('active')
+            curLink.addClass('active')
+        }
+        var newActiveID = $('.links-pager .pager a').index($('.links-pager .pager a.active'));
+        if (newActiveID == 1) {
+            $('.links-pager .pager a.pager-prev').addClass('disabled');
+        } else if (newActiveID == $('.links-pager .pager a').length - 2) {
+            $('.links-pager .pager a.pager-next').addClass('disabled');
+        } else {
+            $('.links-pager .pager a.pager-prev').removeClass('disabled');
+            $('.links-pager .pager a.pager-next').removeClass('disabled');
+        }
+
+        $('.links-item:not(.hidden)').each(function() {
+            var curLinkThis = $(this);
+            var curID = $('.links-item:not(.hidden)').index(curLinkThis);
+            if ((curID >= (newActiveID - 1) * pageSize) && (curID < newActiveID * pageSize)) {
+                curLinkThis.removeClass('pager-hidden');
+            } else {
+                curLinkThis.addClass('pager-hidden');
+            }
+        });
+        
+        $('html, body').animate({'scrollTop': $('.links-filter').offset().top});
+        
+        e.preventDefault();
+    });
+
+});
