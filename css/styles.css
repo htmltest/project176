@@ -784,11 +784,9 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 
 .page-form {max-width:950px; margin:53px 0 0 0; margin:0 0 0 11.82vw}
 .page-form form {margin:0; padding:0}
-.page-form-notice {text-transform:uppercase; font-weight:bold; font-size:21px; line-height:28px; color:#7e7c90; margin:0 0 0 273px}
-.page-form-subtitle {text-transform:uppercase; font-weight:bold; font-size:27px; line-height:32px; color:#433058; margin:57px 0 33px 0}
-.form-row+.page-form-subtitle {margin:48px 0 33px 0}
-.form-row-dates+.page-form-subtitle {margin:48px 0 33px 0}
-.page-form-descr {margin:30px 0 0 0; font-size:20px; line-height:30px; color:#383738}
+.page-form-notice {font-weight:bold; font-size:21px; line-height:28px; color:#7e7c90; margin:0 0 0 273px}
+.page-form-subtitle {font-weight:bold; font-size:27px; line-height:32px; color:#433058; margin:80px 0 0 0}
+.page-form-descr {margin:30px 0 0 0}
 
 @media screen and (max-width:1199px) {
     .page-form {max-width:none; margin:9px 0 0 0; padding:0 25px}
@@ -797,12 +795,10 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 
 .form-row {margin:13px 0; display:table; width:100%}
 .form-row.hidden {display:none}
-.form-label {display:table-cell; vertical-align:middle; width:263px; height:85px; font-weight:bold; font-size:18px; line-height:22px; color:#433058; padding-top:22px}
-.form-field-radios-row .form-label {vertical-align:top}
-.form-field-checkbox-row .form-label {vertical-align:top}
-.form-label-top {vertical-align:top}
-.form-field {display:table-cell; vertical-align:middle; padding:0 0 0 10px}
-.form-row-reverse .form-label {width:auto; padding:0 10px 0 0}
+.form-label {display:table-cell; vertical-align:top; width:263px; font-weight:300; font-size:18px; line-height:22px; color:#433058; padding-top:22px}
+.form-label span {color:#f00}
+.form-field {display:table-cell; vertical-align:middle; padding:0 0 0 20px}
+.form-row-reverse .form-label {width:auto; padding:0 20px 0 0}
 .form-row-reverse .form-field {width:383px; padding:0}
 
 .form-add-other {border-top:1px solid #6d6278; margin:33px 0 0 0; padding:20px 0 0 0}
@@ -814,16 +810,16 @@ footer {position:relative; height:256px; margin:-256px 0 0 0}
 .form-row-dates .form-row {margin:0}
 
 @media screen and (max-width:1199px) {
-    .form-row {margin:22px 0}
+    .form-row {margin:10px 0 0 0}
     .form-label {display:block; height:auto; width:auto; font-size:18px; line-height:27px}
     .form-field {display:block; padding:0; margin:13px 0 0 0}
     .form-row-reverse .form-label {width:auto; padding:0}
     .form-row-reverse .form-field {width:auto}
 
-    .form-row-dates {margin:22px 0}
+    .form-row-dates {margin:10px 0 0 0}
     .form-row-date {float:none; width:auto; padding:0}
     .form-row-date.form-row-date {padding:0}
-    .form-row-dates .form-row {margin:22px 0}
+    .form-row-dates .form-row {margin:10px 0 0 0}
 }
 
 .form-input {position:relative}
@@ -861,11 +857,11 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 .form-input-date::after {content:""; display:block; width:25px; height:25px; position:absolute; right:17px; top:50%; margin-top:-12.5px; background:url(../images/form-input-date.png) no-repeat}
 .form-input-date input {padding-right:57px}
 
-.form-radio {float:left; margin:12px 80px 0 0}
+.form-radio {float:left; margin:22px 80px 0 0}
 .form-field-radios-row .form-radio {float:none; margin:20px 0}
 .form-radio label {cursor:pointer}
 .form-radio label input {display:none}
-.form-radio label span {padding:0 0 0 42px; position:relative; font-weight:500; font-size:19px; line-height:29px; color:#665579}
+.form-radio label span {padding:0 0 0 42px; position:relative; font-weight:normal; font-size:18px; line-height:29px; color:#665579}
 .form-radio label span::before {content:""; display:block; position:absolute; left:0; top:1px; width:20px; height:20px; border:1px solid #9d9d9d; border-radius:50%}
 .form-radio label input:checked+span::after {content:""; display:block; position:absolute; left:6px; top:7px; width:8px; height:8px; background:#5391ff; border-radius:50%}
 
@@ -878,7 +874,7 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 .form-field-checkbox-row .form-checkbox {float:none; margin:20px 0}
 .form-checkbox label {cursor:pointer}
 .form-checkbox label input {display:none}
-.form-checkbox label span {padding:0 0 0 42px; position:relative; font-weight:500; font-size:19px; line-height:29px; color:#665579}
+.form-checkbox label span {padding:0 0 0 42px; position:relative; font-weight:normal; font-size:18px; line-height:29px; color:#665579}
 .form-checkbox label span::before {content:""; display:block; position:absolute; left:0; top:1px; width:20px; height:20px; border:1px solid #9d9d9d; background:url(../images/checkbox.svg) no-repeat -999px -999px}
 .form-checkbox label input:checked+span::before {background-color:#5391ff; background-position:center}
 
@@ -894,7 +890,7 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 .form-radio-policy label span {padding:0 0 0 42px; position:relative; font-weight:500; font-size:19px; line-height:29px; color:#665579}
 .form-radio-policy label span::before {content:""; display:block; position:absolute; left:0; top:1px; width:20px; height:20px; border:1px solid #9d9d9d; background:url(../images/checkbox.svg) no-repeat -999px -999px}
 .form-radio-policy label input:checked+span::before {background-color:#5391ff; background-position:center}
-.form-radio-policy-text {margin:0 60px 0 273px; font-size:20px; line-height:30px; color:#383738}
+.form-radio-policy-text {margin:0 60px 0 273px}
 
 @media screen and (max-width:1199px) {
     .form-radio-policy {padding:20px 0 17px 0}
@@ -902,7 +898,7 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
     .form-radio-policy label span {font-size:20px; padding:0 0 0 35px; line-height:30px}
     .form-radio-policy label span::before {top:-3px}
     .form-radio-policy label input:checked+span::after {top:3px}
-    .form-radio-policy-text {margin:4px 20px 0 55px; font-size:20px; line-height:30px}
+    .form-radio-policy-text {margin:4px 20px 0 55px}
 }
 
 .form-ctrl {margin:45px 0 0 0; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
@@ -929,8 +925,6 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 }
 
 .form-add-link {margin:30px 0 48px 0; font-size:27px; line-height:41px}
-.form-add-link a {text-decoration:underline}
-.form-add-link a:hover {text-decoration:none}
 
 .page-form-add-block {display:none}
 

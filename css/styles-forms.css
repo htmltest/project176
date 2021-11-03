@@ -39,13 +39,19 @@ form {margin:24px 0; padding:0}
 
 .form-row {margin:15px 0}
 
+@media screen and (max-width:1199px) {
+    .form-row {margin:10px 0 0 0}
+    .form-field {margin:0}
+    .form-row-date {margin-top:10px}
+}
+
 .form-input {position:relative}
 .form-input .form-input-label {position:absolute; font-size:20px; line-height:30px; left:0; top:23px; color:#868f9e; transition:all .3s; text-transform:uppercase}
 .form-input.focus .form-input-label {top:0; font-size:11px; color:#c7cad1}
 .form-input-label-opt {color:#25354f}
 
 .form-input input,
-.form-input textarea {position:relative; border:none; border-bottom:2px solid #c7cad1; font:19px/30px GothamPro, sans-serif; color:#25354f; vertical-align:top; margin:0; padding:24px 0 8px 0; width:100%; height:64px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; outline:none; border-radius:0; background:url(../images/blank.gif); -webkit-appearance:none}
+.form-input textarea {position:relative; border:none; border-bottom:2px solid #c7cad1; font:19px/30px GothamPro, sans-serif; color:#25354f; vertical-align:top; margin:0; padding:16px 0; width:100%; height:64px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; outline:none; border-radius:0; background:url(../images/blank.gif); -webkit-appearance:none}
 .form-input textarea {height:auto; resize:none; overflow:auto}
 .form-input input.error,
 .form-input textarea.error {border-color:#da2c5d; color:#da2c5d}
@@ -55,9 +61,10 @@ form {margin:24px 0; padding:0}
 .form-input textarea:hover {border-color:#25354f}
 
 .form-select select {position:relative; border:none; border-bottom:2px solid #c7cad1; font:19px/30px GothamPro, sans-serif; color:#25354f; vertical-align:top; margin:0; padding:24px 0 8px 0; width:100%; height:64px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; outline:none; border-radius:0; background:url(../images/blank.gif); -webkit-appearance:none}
+.form-select .select2-container {width:100% !important}
 
 .form-checkboxes {margin:12px 0}
-.form-checkbox {margin:12px 0}
+.form-checkbox {margin:18px 40px 0 0}
 .form-checkbox::after {content:""; display:block; clear:both}
 .form-checkbox label {float:left; margin:0; cursor:pointer; position:relative; padding:0; display:block; font-weight:normal}
 .form-checkbox input {display:none}
@@ -67,13 +74,13 @@ form {margin:24px 0; padding:0}
 .form-checkbox label input:checked+label+span::before {background-position:center; border-color:#c39fdf; background-color:#c39fdf}
 .form-checkbox label input.error+span::before,
 .form-checkbox label input.error+label+span::before {border-color:#da2c5d}
-.form-checkbox label span {color:#868f9e; font-size:14px; padding-left:28px}
+.form-checkbox label span {color:#868f9e; font-size:18px; padding-left:28px}
 .form-checkbox label:hover span,
 .form-checkbox label input:checked+span,
 .form-checkbox label input:checked+label+span {color:#25354f}
 
 .form-radios {margin:12px 0}
-.form-radio {margin:12px 0}
+.form-radio {margin:18px 40px 0 0}
 .form-radio::after {content:""; display:block; clear:both}
 .form-radio label {float:left; margin:0 20px 0 0; cursor:pointer; position:relative; padding:0; display:block; font-weight:normal}
 .form-radio input {display:none}
@@ -83,7 +90,7 @@ form {margin:24px 0; padding:0}
 .form-radio label input:checked+label+span::before {border-color:#c39fdf}
 .form-radio label input:checked+span::after,
 .form-radio label input:checked+span::after {content:""; display:block; width:8px; height:8px; position:absolute; left:5px; top:5px; border-radius:50%; background:#c39fdf}
-.form-radio label span {color:#868f9e; font-size:14px; padding:0 0 0 28px}
+.form-radio label span {color:#868f9e; font-size:18px; padding:0 0 0 28px}
 .form-radio label:hover span,
 .form-radio label input:checked+span,
 .form-radio label input:checked+label+span {color:#25354f}
