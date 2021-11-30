@@ -124,7 +124,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
     .header-search {display:none}
 }
 
-.header-menu {float:left; font-weight:500; font-size:14px; line-height:23px; margin:2.5vw 0 0 5.46vw}
+.header-menu {float:right; font-weight:500; font-size:14px; line-height:23px; margin:2.5vw 5.46vw 0 0}
 .header-menu ul {margin:0}
 .header-menu ul li {float:left; margin:0 0 0 3vw; padding:0}
 .header-menu ul li:first-child {margin:0}
@@ -132,6 +132,7 @@ header {position:absolute; left:0; top:0; right:0; z-index:99}
 .header-menu ul li a {color:rgba(255, 255, 255, 0.7); transition:color 0.2s; position:relative}
 .header-menu ul li.active a,
 .header-menu ul li a:hover {color:rgba(217, 174, 252, 0.7); text-decoration:none}
+.header-menu ul li.with-submenu::after {content:""; display:block; position:absolute; right:-19px; top:0; bottom:0; width:19px}
 .header-menu ul li.with-submenu a::after {content:""; display:block; position:absolute; right:-19px; top:50%; margin-top:-3px; width:19px; height:7px; background:url(../images/header-submenu.png) no-repeat right top; background-size:13px auto}
 .header-menu ul li.with-submenu:hover a::after,
 .header-menu ul li.with-submenu.active a::after {background-position:right -8px}
