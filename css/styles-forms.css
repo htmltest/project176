@@ -104,3 +104,11 @@ form {margin:24px 0; padding:0}
 .container::after {content:""; display:block; clear:both}
 
 .content {max-width:950px; padding:40px 0 0 0; position:relative; z-index:1}
+
+header .container {max-width:none; padding:0 3.43vw}
+footer .container {max-width:none; padding:0 3.43vw}
+
+@media screen and (max-width:1199px) {
+    header .container {padding:0 15px}
+    footer .container {padding:0 15px}
+}
