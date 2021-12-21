@@ -856,7 +856,7 @@ label.error {display:block; font-size:12px; line-height:18px; color:#df8e8e; mar
 .form-select label.error {position:absolute; right:0; bottom:0}
 
 .form-input-date {position:relative}
-.form-input-date::after {content:""; display:block; width:25px; height:25px; position:absolute; right:17px; top:50%; margin-top:-12.5px; background:url(../images/form-input-date.png) no-repeat}
+.form-input-date::after {content:""; display:block; width:25px; height:25px; position:absolute; right:17px; top:50%; margin-top:-12.5px; background:url(../images/form-input-date.png) no-repeat; pointer-events:none}
 .form-input-date input {padding-right:57px}
 
 .form-radio {float:left; margin:22px 80px 0 0}

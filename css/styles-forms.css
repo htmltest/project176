@@ -26,9 +26,8 @@ blockquote::after {content:""; display:block; width:84px; height:2px; background
     blockquote::after {display:none}
 }
 
-.btn {display:inline-block; vertical-align:top; border-radius:0; background:#c39fdf; margin:0; padding:0 50px; outline:none; overflow:visible; border:none; text-decoration:none; height:62px; box-sizing:border-box; color:#fff; text-align:center; font:bold 18px/62px GothamPro, sans-serif; letter-spacing:1px; -webkit-appearance:none; cursor:pointer; transition:all .2s}
-.btn:hover {background:#d9c7eb; color:#fff}
-.btn:active {background:#b795d1; color:#fff}
+.btn {display:inline-block; vertical-align:top; border-radius:0; background:#755f8e; margin:0; padding:0 50px; outline:none; overflow:visible; border:none; text-decoration:none; height:62px; box-sizing:border-box; color:#fff; text-align:center; font:bold 18px/62px GothamPro, sans-serif; letter-spacing:1px; -webkit-appearance:none; cursor:pointer; transition:all .2s}
+.btn:hover {text-decoration:none; background:#d9c7eb; color:#fff}
 
 form {margin:24px 0; padding:0}
 .form-success {background:#f1f8f4; border:1px solid #cbead8; padding:21px 38px 13px 38px; margin:17px 0; color:#c7cad1; font-size:11px; line-height:24px; text-transform:uppercase}
